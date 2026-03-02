@@ -6,12 +6,12 @@ const chatMessages = document.getElementById('chatMessages');
 
 // Load chat history from localStorage
 function loadChatHistory() {
-    const history = JSON.parse(localStorage.getItem('lineness_chat') || '[]');
+    const history = JSON.parse(localStorage.getItem('kvantora_chat') || '[]');
     chatMessages.innerHTML = '';
 
     // Default welcome message
     const welcomeMsg = {
-        text: "Привет! 👋\nЯ виртуальный ассистент ЛИНЕСС.\nКак я могу вам помочь?",
+        text: "Привет! 👋\nЯ виртуальный ассистент КВАНТОРА.\nКак я могу вам помочь?",
         sender: 'bot',
         time: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
     };
@@ -37,9 +37,9 @@ function addMessageToChat(text, sender, time, save = true) {
     chatMessages.scrollTop = chatMessages.scrollHeight;
 
     if (save) {
-        const history = JSON.parse(localStorage.getItem('lineness_chat') || '[]');
+        const history = JSON.parse(localStorage.getItem('kvantora_chat') || '[]');
         history.push({ text, sender, time });
-        localStorage.setItem('lineness_chat', JSON.stringify(history));
+        localStorage.setItem('kvantora_chat', JSON.stringify(history));
     }
 }
 
