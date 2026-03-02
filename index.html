@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЛИНЕСС - Разработка цифровых проектов</title>
+    <link rel="stylesheet" href="eofcss3/EOFCSSVariables3.css">
+    <link rel="stylesheet" href="eofcss3/EOFCSSReset3.css">
+    <link rel="stylesheet" href="eofcss3/EOFcursor3.css">
+    <link rel="stylesheet" href="eofcss3/EOFContainer3.css">
+    <link rel="stylesheet" href="eofcss3/EOFNavigation3.css">
+    <link rel="stylesheet" href="eofcss3/EOFHero3.css">
+    <link rel="stylesheet" href="eofcss3/EOFButtons3.css">
+    <link rel="stylesheet" href="eofcss3/EOFHeroVisual3.css">
+    <link rel="stylesheet" href="eofcss3/EOFScrollIndicator3.css">
+    <link rel="stylesheet" href="eofcss3/EOFSectionStyles3.css">
+    <link rel="stylesheet" href="eofcss3/EOFServiceSection3.css">
+    <link rel="stylesheet" href="eofcss3/EOFPortfolioSection3.css">
+    <link rel="stylesheet" href="eofcss3/EOFAboutSection3.css">
+    <link rel="stylesheet" href="eofcss3/EOFAboutVisual3.css">
+    <link rel="stylesheet" href="eofcss3/EOFContactSection3.css">
+    <link rel="stylesheet" href="eofcss3/EOFForm3.css">
+    <link rel="stylesheet" href="eofcss3/EOFFooter3.css">
+    <link rel="stylesheet" href="eofcss3/EOFAnimations3.css">
+    <link rel="stylesheet" href="eofcss3/EOFResponsive3.css">
+    <link rel="stylesheet" href="eofcss3/EOFUtility3.css">
+    <link rel="stylesheet" href="eofcss3/EOFPerformance3.css">
+    <link rel="stylesheet" href="eofcss3/EOFCanvas3.css">
+    <link rel="stylesheet" href="eofcss3/EOFServiceImg3.css">
+    <link rel="stylesheet" href="eofcss3/EOFPortfolioImg3.css">
+    <link rel="stylesheet" href="eofcss3/EOFAboutImg3.css">
+    <link rel="stylesheet" href="eofcss3/EOFContactLink3.css">
+    <link rel="stylesheet" href="eofcss3/EOFFooterExtended3.css">
+    <link rel="stylesheet" href="eofcss3/EOFResponsiveFooter3.css">
+    <link rel="stylesheet" href="eofcss3/EOFMouseReactive3.css">
+    <link rel="stylesheet" href="eofcss3/EOFASCII3.css">
+    <link rel="stylesheet" href="eofcss3/EOFServiceRect3.css">
+    <link rel="stylesheet" href="eofcss3/EOFChat3.css">
+    <link rel="stylesheet" href="eofcss3/EOFResponsiveChat3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Mouse Reactive Background -->
+    <div class="mouse-reactive-bg">
+        <div class="mouse-gradient" id="mouseGradient"></div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="header-include">
+        <!-- Include via <span class="material-icons" style="font-size: 1.25rem; vertical-align: middle;">javascript</span> or server-side -->
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <canvas class="hero-canvas" id="heroCanvas"></canvas>
+        <div class="hero-bg">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="line">Создаём</span>
+                    <span class="line">цифровое</span>
+                    <span class="line gradient-text">будущее</span>
+                </h1>
+                <p class="hero-subtitle">Разработка инновационных цифровых проектов под ваши идеи</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Начать проект</a>
+                    <a href="#portfolio" class="btn btn-secondary">Смотреть работы</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <div class="card-icon"><span class="material-icons" style="font-size: 1.25rem; vertical-align: middle;">bolt</span></div>
+                    <div class="card-text">Высокая скорость</div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon"><span class="material-icons" style="font-size: 1.25rem; vertical-align: middle;">palette</span></div>
+                    <div class="card-text">Уникальный дизайн</div>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-icon"><span class="material-icons" style="font-size: 1.25rem; vertical-align: middle;">rocket</span></div>
+                    <div class="card-text">Масштабируемость</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Прокрутите вниз</span>
+        </div>
+    </section>
+
+    <!-- ASCII Section -->
+    <section class="ascii-section" id="ascii">
+        <div class="ascii-container">
+            <pre class="ascii-title">
+   _____    ____   ___  ____   ____   _____ 
+  / ___/   / __ \ /   |/ __ \ / __ \ / ___/
+  \__ \   / /_/ // /|  / /_/ // /_/ // /__  
+ ___/ /  / _, _// ___ / ____// _, _/ \___/  
+/____/  /_/ |_|/_/  |_/_/    /_/ |_|       
+            </pre>
+            <h2 class="ascii-subtitle">ЛИНЕСС — Цифровые решения без компромиссов</h2>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Наши услуги</span>
+                <h2 class="section-title">Что мы делаем</h2>
+            </div>
+            <div class="services-grid" id="servicesGrid">
+                <!-- Services will be loaded from <span class="material-icons" style="font-size: 1.25rem; vertical-align: middle;">javascript</span>ON -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Наши работы</span>
+                <h2 class="section-title">Портфолио</h2>
+                <div class="portfolio-filters">
+                    <button class="filter-btn active" data-filter="all">Все</button>
+                    <button class="filter-btn" data-filter="web">Веб</button>
+                    <button class="filter-btn" data-filter="mobile">Мобильные</button>
+                    <button class="filter-btn" data-filter="design">Дизайн</button>
+                </div>
+            </div>
+            <div class="portfolio-grid" id="portfolioGrid">
+                <!-- Portfolio items will be loaded from <span class="material-icons" style="font-size: 1.25rem; vertical-align: middle;">javascript</span>ON -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <span class="section-label">О компании</span>
+                    <h2 class="section-title">Создаём цифровые продукты, которые меняют мир</h2>
+                    <p class="about-desc">ЛИНЕСС — это команда талантливых разработчиков, дизайнеров и стратегов, объединённых страстью к инновациям. Мы превращаем сложные идеи в элегантные цифровые решения.</p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="150">0</div>
+                            <div class="stat-label">Проектов</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="50">0</div>
+                            <div class="stat-label">Клиентов</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="8">0</div>
+                            <div class="stat-label">Лет опыта</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="25">0</div>
+                            <div class="stat-label">Экспертов</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="about-image-wrapper">
+                        <div class="about-image">
+                            <img src="about/team.jpg" alt="Команда ЛИНЕСС" class="about-img" loading="lazy">
+                        </div>
+                        <div class="floating-badge badge-1">
+                            <span class="badge-icon"><span class="material-icons" style="font-size: 1.25rem; vertical-align: middle;">emoji_events</span></span>
+                            <span class="badge-text">Лучшие 2024</span>
+                        </div>
+                        <div class="floating-badge badge-2">
+                            <span class="badge-icon"><span class="material-icons" style="font-size: 1.25rem; vertical-align: middle;">star</span></span>
+                            <span class="badge-text">4.9 рейтинг</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <span class="section-label">Свяжитесь с нами</span>
+                    <h2 class="section-title">Давайте создадим что-то великое вместе</h2>
+                    <p class="contact-desc">Расскажите о вашем проекте, и мы предложим оптимальное решение</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon"><span class="material-icons" style="font-size: 1.25rem; vertical-align: middle;">email</span></div>
+                            <div class="contact-text">
+                                <span class="label">Email</span>
+                                <a href="mailto:hello@lineness.ru">hello@lineness.ru</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon"><span class="material-icons" style="font-size: 1.25rem; vertical-align: middle;">phone</span></div>
+                            <div class="contact-text">
+                                <span class="label">Телефон</span>
+                                <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="TikTok">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="VK">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M15.07 11.25c-.77-.16-1.56.12-2.1.77-.33.39-.45.92-.32 1.42.13.5.47.9.92 1.05.45.15.94.07 1.28-.22.34-.29.45-.78.22-1.19-.23-.41-.77-.62-1.3-.48-.53.14-1.02.5-1.35.98-.33.48-.42 1.05-.25 1.6.17.55.58 1.02 1.12 1.22.54.2 1.13.09 1.53-.32.4-.41.5-1.02.27-1.56-.23-.54-.78-.82-1.32-.64-.54.18-1.03.6-1.35 1.12-.32.52-.4 1.12-.22 1.68.18.56.6 1.03 1.15 1.22.55.19 1.14.08 1.56-.35.42-.43.52-1.06.28-1.62-.23-.54-.78-.82-1.33-.64-.55.18-1.04.61-1.36 1.13-.32.52-.4 1.12-.22 1.68.18.56.6 1.03 1.15 1.22.55.19 1.14.08 1.56-.35.42-.43.52-1.06.28-1.62z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="chat-container" id="chatContainer">
+                    <div class="chat-header">
+                        <div class="chat-avatar"><span class="material-icons" style="font-size: 1.25rem; vertical-align: middle;">chat</span></div>
+                        <div class="chat-header-info">
+                            <h4>ЛИНЕСС Support</h4>
+                            <p>Мы онлайн и готовы помочь</p>
+                        </div>
+                        <div class="chat-status"></div>
+                    </div>
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="chat-message bot">
+                            Привет! <span class="material-icons" style="font-size: 1.25rem; vertical-align: middle;">waving_hand</span><br>
+                            Я виртуальный ассистент ЛИНЕСС.<br>
+                            Как я могу вам помочь?
+                            <div class="chat-message-time">Сейчас</div>
+                        </div>
+                    </div>
+                    <div class="chat-input-area">
+                        <input type="text" class="chat-input" id="chatInput" placeholder="Введите сообщение...">
+                        <button class="chat-send" id="chatSend">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Include -->
+    <div class="footer-include">
+        <!-- Include via <span class="material-icons" style="font-size: 1.25rem; vertical-align: middle;">javascript</span> or server-side -->
+    </div>
+
+    <!-- JavaScript Modules -->
+    <script src="eofjs3/EOFcursor3.js"></script>
+    <script src="eofjs3/EOFMouseReactive3.js"></script>
+    <script src="eofjs3/EOFNavigation3.js"></script>
+    <script src="eofjs3/EOFScrollReveal3.js"></script>
+    <script src="eofjs3/EOFStatsCounter3.js"></script>
+    <script src="eofjs3/EOFPortfolioFilter3.js"></script>
+    <script src="eofjs3/EOFContactForm3.js"></script>
+    <script src="eofjs3/EOFNotification3.js"></script>
+    <script src="eofjs3/EOFParallax3.js"></script>
+    <script src="eofjs3/EOFMagnetic3.js"></script>
+    <script src="eofjs3/EOFTextSplit3.js"></script>
+    <script src="eofjs3/EOFLazyLoad3.js"></script>
+    <script src="eofjs3/EOFReducedMotion3.js"></script>
+    <script src="eofjs3/EOFPerformance3.js"></script>
+    <script src="eofjs3/EOFInit3.js"></script>
+    <script src="eofjs3/EOFServiceLoader3.js"></script>
+    <script src="eofjs3/EOFPortfolioLoader3.js"></script>
+    <script src="eofjs3/EOFPortfolioFilterDynamic3.js.js"></script>
+    <script src="eofjs3/EOFChat3.js"></script>
+    <script src="eofjs3/EOFCanvasAnimation3.js"></script>
+    <script>
+        // Load header and footer via JavaScript
+        fetch('special/header.html').then(r => r.text()).then(html => {
+            document.querySelector('.header-include').innerHTML = html;
+        });
+        fetch('special/footer.html').then(r => r.text()).then(html => {
+            document.querySelector('.footer-include').innerHTML = html;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О нас - ЛИНЕСС</title>
+    <link rel="stylesheet" href="eofcss3/EOFCSSVariables3.css">
+    <link rel="stylesheet" href="eofcss3/EOFCSSReset3.css">
+    <link rel="stylesheet" href="eofcss3/EOFcursor3.css">
+    <link rel="stylesheet" href="eofcss3/EOFNavigation3.css">
+    <link rel="stylesheet" href="eofcss3/EOFSectionStyles3.css">
+    <link rel="stylesheet" href="eofcss3/EOFResponsive3.css">
+    <link rel="stylesheet" href="eofcss3/EOFUtility3.css">
+    <link rel="stylesheet" href="eofcss3/EOFMouseReactive3.css">
+    <link rel="stylesheet" href="eofcss3/EOFFooterExtended3.css">
+    <link rel="stylesheet" href="eofcss3/EOFResponsiveFooter3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <div class="mouse-reactive-bg">
+        <div class="mouse-gradient" id="mouseGradient"></div>
+    </div>
+
+    <div class="header-include"></div>
+
+    <section class="about" id="about" style="padding-top: 120px;">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <span class="section-label">О компании</span>
+                    <h1 class="section-title">Создаём цифровые продукты, которые меняют мир</h1>
+                    <p class="about-desc">ЛИНЕСС — это команда талантливых разработчиков, дизайнеров и стратегов, объединённых страстью к инновациям. Мы превращаем сложные идеи в элегантные цифровые решения.</p>
+                    <p class="about-desc">Наша миссия — помогать бизнесу расти через технологии. Мы верим, что каждая идея заслуживает идеальной реализации.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" style="padding-top: 80px;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Наши ценности</span>
+                <h2 class="section-title">Что мы предлагаем</h2>
+            </div>
+            <div class="services-grid" id="servicesGrid"></div>
+        </div>
+    </section>
+
+    <section class="about" style="padding-top: 80px;">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Наша команда</h2>
+                    <p class="about-desc">В ЛИНЕСС работают лучшие специалисты отрасли. Мы постоянно развиваемся, изучаем новые технологии и делимся знаниями.</p>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="25">0</div>
+                            <div class="stat-label">Экспертов</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="8">0</div>
+                            <div class="stat-label">Лет опыта</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="50">0</div>
+                            <div class="stat-label">Клиентов</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" data-target="150">0</div>
+                            <div class="stat-label">Проектов</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer-include"></div>
+
+    <script src="eofjs3/EOFcursor3.js"></script>
+    <script src="eofjs3/EOFMouseReactive3.js"></script>
+    <script src="eofjs3/EOFNavigation3.js"></script>
+    <script src="eofjs3/EOFScrollReveal3.js"></script>
+    <script src="eofjs3/EOFStatsCounter3.js"></script>
+    <script src="eofjs3/EOFServiceLoader3.js"></script>
+    <script src="eofjs3/EOFInit3.js"></script>
+    <script>
+        fetch('special/header.html').then(r => r.text()).then(html => {
+            document.querySelector('.header-include').innerHTML = html;
+        });
+        fetch('special/footer.html').then(r => r.text()).then(html => {
+            document.querySelector('.footer-include').innerHTML = html;
+        });
+    </script>
+</body>
+</html>

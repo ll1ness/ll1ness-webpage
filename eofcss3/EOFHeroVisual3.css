@@ -1,0 +1,55 @@
+/* ===== Hero Visual ===== */
+.hero-visual {
+    position: relative;
+    height: 400px;
+    opacity: 0;
+    animation: fadeIn 1s ease 0.9s forwards;
+}
+
+.floating-card {
+    position: absolute;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: var(--shadow-md);
+    animation: floatCard 6s ease-in-out infinite;
+}
+
+.card-1 {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.card-2 {
+    top: 45%;
+    right: 10%;
+    animation-delay: -2s;
+}
+
+.card-3 {
+    bottom: 15%;
+    left: 25%;
+    animation-delay: -4s;
+}
+
+@keyframes floatCard {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.card-icon {
+    font-size: 1.5rem;
+}
+
+.card-text {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+

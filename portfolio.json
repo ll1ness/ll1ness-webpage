@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Интернет-магазин",
+    "category": "web",
+    "description": "Полностью функциональный e-commerce с панелью управления",
+    "image": "portfolio/project1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Фитнес-трекер",
+    "category": "mobile",
+    "description": "Мобильное приложение для отслеживания тренировок",
+    "image": "portfolio/project2.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Фирменный стиль",
+    "category": "design",
+    "description": "Полный ребрендинг технологического стартапа",
+    "image": "portfolio/project3.jpg"
+  },
+  {
+    "id": 4,
+    "title": "SaaS Платформа",
+    "category": "web",
+    "description": "Облачное решение для бизнеса",
+    "image": "portfolio/project4.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Доставка еды",
+    "category": "mobile",
+    "description": "Приложение для заказа и доставки пищи",
+    "image": "portfolio/project5.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Аналитическая панель",
+    "category": "design",
+    "description": "Интерфейс для визуализации данных",
+    "image": "portfolio/project6.jpg"
+  }
+]

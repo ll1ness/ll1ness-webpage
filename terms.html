@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пользовательское соглашение - ЛИНЕСС</title>
+    <link rel="stylesheet" href="eofcss3/EOFCSSVariables3.css">
+    <link rel="stylesheet" href="eofcss3/EOFCSSReset3.css">
+    <link rel="stylesheet" href="eofcss3/EOFcursor3.css">
+    <link rel="stylesheet" href="eofcss3/EOFNavigation3.css">
+    <link rel="stylesheet" href="eofcss3/EOFSectionStyles3.css">
+    <link rel="stylesheet" href="eofcss3/EOFResponsive3.css">
+    <link rel="stylesheet" href="eofcss3/EOFMouseReactive3.css">
+    <link rel="stylesheet" href="eofcss3/EOFFooterExtended3.css">
+    <link rel="stylesheet" href="eofcss3/EOFResponsiveFooter3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <div class="mouse-reactive-bg">
+        <div class="mouse-gradient" id="mouseGradient"></div>
+    </div>
+
+    <div class="header-include"></div>
+
+    <section class="about" style="padding-top: 120px;">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <span class="section-label">Пользовательское соглашение</span>
+                    <h1 class="section-title">Условия использования</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" style="padding: 80px 0;">
+        <div class="container">
+            <div class="about-text" style="max-width: 800px; margin: 0 auto;">
+                <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 24px;">1. Общие положения</h2>
+                <p class="about-desc">Настоящее пользовательское соглашение регулирует использование сайта ЛИНЕСС. Используя сайт, вы соглашаетесь с данными условиями.</p>
+                
+                <h2 class="section-title" style="font-size: 1.5rem; margin: 40px 0 24px;">2. Услуги</h2>
+                <p class="about-desc">Мы предоставляем консультации и услуги по разработке цифровых проектов. Все детали обсуждаются индивидуально.</p>
+                
+                <h2 class="section-title" style="font-size: 1.5rem; margin: 40px 0 24px;">3. Интеллектуальная собственность</h2>
+                <p class="about-desc">Все материалы на сайте защищены авторским правом. Запрещено копирование и распространение без разрешения.</p>
+                
+                <h2 class="section-title" style="font-size: 1.5rem; margin: 40px 0 24px;">4. Ограничение ответственности</h2>
+                <p class="about-desc">Мы не несем ответственности за ущерб, возникший в результате использования сайта или наших услуг, кроме случаев, предусмотренных законом.</p>
+                
+                <h2 class="section-title" style="font-size: 1.5rem; margin: 40px 0 24px;">5. Изменения</h2>
+                <p class="about-desc">Мы оставляем за собой право изменять условия соглашения. Продолжение использования сайта после изменений означает принятие новых условий.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer-include"></div>
+
+    <script src="eofjs3/EOFcursor3.js"></script>
+    <script src="eofjs3/EOFMouseReactive3.js"></script>
+    <script src="eofjs3/EOFNavigation3.js"></script>
+    <script src="eofjs3/EOFScrollReveal3.js"></script>
+    <script src="eofjs3/EOFInit3.js"></script>
+    <script>
+        fetch('special/header.html').then(r => r.text()).then(html => {
+            document.querySelector('.header-include').innerHTML = html;
+        });
+        fetch('special/footer.html').then(r => r.text()).then(html => {
+            document.querySelector('.footer-include').innerHTML = html;
+        });
+    </script>
+</body>
+</html>

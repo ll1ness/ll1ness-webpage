@@ -1,0 +1,20 @@
+/* ===== Responsive Footer ===== */
+@media (max-width: 1024px) {
+    .footer-extended {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-extended {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+}
+

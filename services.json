@@ -1,0 +1,30 @@
+[
+  {
+    "id": "web",
+    "title": "Веб-разработка",
+    "description": "Создание современных веб-приложений с использованием передовых технологий",
+    "image": "services/web-dev.svg",
+    "tags": ["React", "Vue", "Node.js"]
+  },
+  {
+    "id": "mobile",
+    "title": "Мобильные приложения",
+    "description": "Нативные и кроссплатформенные приложения для iOS и Android",
+    "image": "services/mobile-apps.svg",
+    "tags": ["React Native", "Flutter", "Swift"]
+  },
+  {
+    "id": "design",
+    "title": "UI/UX Дизайн",
+    "description": "Создание интуитивно понятных и визуально привлекательных интерфейсов",
+    "image": "services/ui-ux.svg",
+    "tags": ["Figma", "Prototyping", "Design Systems"]
+  },
+  {
+    "id": "backend",
+    "title": "Backend разработка",
+    "description": "Надёжные и масштабируемые серверные решения",
+    "image": "services/backend.svg",
+    "tags": ["Python", "Node.js", "PostgreSQL"]
+  }
+]

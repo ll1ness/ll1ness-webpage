@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Политика конфиденциальности - ЛИНЕСС</title>
+    <link rel="stylesheet" href="eofcss3/EOFCSSVariables3.css">
+    <link rel="stylesheet" href="eofcss3/EOFCSSReset3.css">
+    <link rel="stylesheet" href="eofcss3/EOFcursor3.css">
+    <link rel="stylesheet" href="eofcss3/EOFNavigation3.css">
+    <link rel="stylesheet" href="eofcss3/EOFSectionStyles3.css">
+    <link rel="stylesheet" href="eofcss3/EOFResponsive3.css">
+    <link rel="stylesheet" href="eofcss3/EOFMouseReactive3.css">
+    <link rel="stylesheet" href="eofcss3/EOFFooterExtended3.css">
+    <link rel="stylesheet" href="eofcss3/EOFResponsiveFooter3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <div class="mouse-reactive-bg">
+        <div class="mouse-gradient" id="mouseGradient"></div>
+    </div>
+
+    <div class="header-include"></div>
+
+    <section class="about" style="padding-top: 120px;">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <span class="section-label">Политика конфиденциальности</span>
+                    <h1 class="section-title">Защита ваших данных</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" style="padding: 80px 0;">
+        <div class="container">
+            <div class="about-text" style="max-width: 800px; margin: 0 auto;">
+                <h2 class="section-title" style="font-size: 1.5rem; margin-bottom: 24px;">1. Сбор информации</h2>
+                <p class="about-desc">Мы собираем только ту информацию, которую вы добровольно предоставляете через формы на сайте. Это может включать имя, email и сообщения.</p>
+                
+                <h2 class="section-title" style="font-size: 1.5rem; margin: 40px 0 24px;">2. Использование информации</h2>
+                <p class="about-desc">Собранная информация используется исключительно для связи с вами и предоставления наших услуг. Мы не передаем ваши данные третьим лицам.</p>
+                
+                <h2 class="section-title" style="font-size: 1.5rem; margin: 40px 0 24px;">3. Хранение данных</h2>
+                <p class="about-desc">Сообщения из чата хранятся в вашем браузере (localStorage) и не отправляются на наш сервер. Вы можете удалить их в любой момент.</p>
+                
+                <h2 class="section-title" style="font-size: 1.5rem; margin: 40px 0 24px;">4. Безопасность</h2>
+                <p class="about-desc">Мы принимаем меры для защиты вашей информации, однако ни один метод передачи данных через интернет не является на 100% безопасным.</p>
+                
+                <h2 class="section-title" style="font-size: 1.5rem; margin: 40px 0 24px;">5. Контакты</h2>
+                <p class="about-desc">По вопросам конфиденциальности обращайтесь: <a href="mailto:privacy@lineness.ru" style="color: var(--color-primary);">privacy@lineness.ru</a></p>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer-include"></div>
+
+    <script src="eofjs3/EOFcursor3.js"></script>
+    <script src="eofjs3/EOFMouseReactive3.js"></script>
+    <script src="eofjs3/EOFNavigation3.js"></script>
+    <script src="eofjs3/EOFScrollReveal3.js"></script>
+    <script src="eofjs3/EOFInit3.js"></script>
+    <script>
+        fetch('special/header.html').then(r => r.text()).then(html => {
+            document.querySelector('.header-include').innerHTML = html;
+        });
+        fetch('special/footer.html').then(r => r.text()).then(html => {
+            document.querySelector('.footer-include').innerHTML = html;
+        });
+    </script>
+</body>
+</html>

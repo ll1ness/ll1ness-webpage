@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги - ЛИНЕСС</title>
+    <link rel="stylesheet" href="eofcss3/EOFCSSVariables3.css">
+    <link rel="stylesheet" href="eofcss3/EOFCSSReset3.css">
+    <link rel="stylesheet" href="eofcss3/EOFcursor3.css">
+    <link rel="stylesheet" href="eofcss3/EOFNavigation3.css">
+    <link rel="stylesheet" href="eofcss3/EOFSectionStyles3.css">
+    <link rel="stylesheet" href="eofcss3/EOFServiceRect3.css">
+    <link rel="stylesheet" href="eofcss3/EOFResponsive3.css">
+    <link rel="stylesheet" href="eofcss3/EOFMouseReactive3.css">
+    <link rel="stylesheet" href="eofcss3/EOFFooterExtended3.css">
+    <link rel="stylesheet" href="eofcss3/EOFResponsiveFooter3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <div class="mouse-reactive-bg">
+        <div class="mouse-gradient" id="mouseGradient"></div>
+    </div>
+
+    <div class="header-include"></div>
+
+    <section class="services" style="padding-top: 120px;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Наши услуги</span>
+                <h1 class="section-title">Полный спектр цифровых решений</h1>
+                <p style="color: var(--color-text-secondary); font-size: 1.125rem; max-width: 600px; margin: 0 auto;">
+                    Мы предоставляем полный цикл разработки — от идеи до запуска и поддержки
+                </p>
+            </div>
+            <div class="services-grid" id="servicesGrid" style="margin-top: 60px;"></div>
+        </div>
+    </section>
+
+    <section class="about" style="padding: 80px 0;">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Технологии, которые мы используем</h2>
+                    <p class="about-desc">Мы работаем с современным стеком технологий, чтобы обеспечить максимальную производительность, безопасность и масштабируемость ваших проектов.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer-include"></div>
+
+    <script src="eofjs3/EOFcursor3.js"></script>
+    <script src="eofjs3/EOFMouseReactive3.js"></script>
+    <script src="eofjs3/EOFNavigation3.js"></script>
+    <script src="eofjs3/EOFScrollReveal3.js"></script>
+    <script src="eofjs3/EOFServiceLoader3.js"></script>
+    <script src="eofjs3/EOFInit3.js"></script>
+    <script>
+        fetch('special/header.html').then(r => r.text()).then(html => {
+            document.querySelector('.header-include').innerHTML = html;
+        });
+        fetch('special/footer.html').then(r => r.text()).then(html => {
+            document.querySelector('.footer-include').innerHTML = html;
+        });
+    </script>
+</body>
+</html>
