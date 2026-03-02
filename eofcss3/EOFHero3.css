@@ -8,4 +8,6 @@
     position: relative;
     padding: 120px 24px 80px;
     overflow: hidden;
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(20px);
 }

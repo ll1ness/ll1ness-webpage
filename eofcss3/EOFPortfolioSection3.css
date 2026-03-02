@@ -1,4 +1,9 @@
 /* ===== Portfolio Section ===== */
+.portfolio {
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(20px);
+}
+
 .portfolio-filters {
     display: flex;
     justify-content: center;
