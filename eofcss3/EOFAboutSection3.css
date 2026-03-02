@@ -1,6 +1,7 @@
 /* ===== About Section ===== */
 .about {
-    background: transparent;
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(20px);
 }
 
 .about-content {
