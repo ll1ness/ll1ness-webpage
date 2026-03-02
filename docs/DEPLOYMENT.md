@@ -1,8 +1,8 @@
-# Развертывание проекта ЛИНЕСС
+# Развертывание проекта КВАНТОРА
 
 ## Открытый проект для сообщества
 
-Это руководство описывает, как развернуть проект ЛИНЕСС - открытый проект для сообщества разработчиков. Все deployment инструкции доступны под лицензией MIT и предназначены для совместного использования.
+Это руководство описывает, как развернуть проект КВАНТОРА - открытый проект для сообщества разработчиков. Все deployment инструкции доступны под лицензией MIT и предназначены для совместного использования.
 
 ## Быстрый старт
 
@@ -10,7 +10,7 @@
 
 ```bash
 # Клонировать репозиторий
-git clone https://github.com/lineness/poligon-ii.git
+git clone https://github.com/kvantora/poligon-ii.git
 cd полигон-ИИ
 
 # Установить зависимости (если есть package.json)
@@ -230,7 +230,7 @@ vercel --prod
 server {
     listen 80;
     server_name yourdomain.com;
-    root /var/www/lineness/dist;
+    root /var/www/kvantora/dist;
     index index.html;
 
     # Кэширование статики
@@ -267,7 +267,7 @@ server {
 ```apache
 <VirtualHost *:80>
     ServerName yourdomain.com
-    DocumentRoot /var/www/lineness/dist
+    DocumentRoot /var/www/kvantora/dist
 
     <IfModule mod_expires.c>
         ExpiresActive On
@@ -331,10 +331,10 @@ server {
 #### Сборка и запуск
 ```bash
 # Собрать образ
-docker build -t lineness .
+docker build -t kvantora .
 
 # Запустить контейнер
-docker run -d -p 8080:80 lineness
+docker run -d -p 8080:80 kvantora
 ```
 
 ## CI/CD пайплайн
@@ -449,8 +449,8 @@ add_header Access-Control-Allow-Headers "Content-Type" always;
 # backup.sh
 
 DATE=$(date +%Y%m%d_%H%M%S)
-BACKUP_DIR="/backups/lineness"
-SOURCE_DIR="/var/www/lineness/dist"
+BACKUP_DIR="/backups/kvantora"
+SOURCE_DIR="/var/www/kvantora/dist"
 
 tar -czf $BACKUP_DIR/backup_$DATE.tar.gz $SOURCE_DIR
 
@@ -482,7 +482,7 @@ npm run build
 # Перезапустить сервер
 
 # Или восстановить из бэкапа
-tar -xzf backup_20240101_120000.tar.gz -C /var/www/lineness/
+tar -xzf backup_20240101_120000.tar.gz -C /var/www/kvantora/
 ```
 
 ## Вклад в deployment процесс
@@ -551,11 +551,11 @@ location / {
 
 ## Сообщество
 
-Проект ЛИНЕСС - это open source проект для сообщества. Все deployment инструкции свободно доступны и могут быть улучшены сообществом.
+Проект КВАНТОРА - это open source проект для сообщества. Все deployment инструкции свободно доступны и могут быть улучшены сообществом.
 
-- **GitHub**: https://github.com/lineness
-- **Issues**: https://github.com/lineness/poligon-ii/issues
-- **Discussions**: https://github.com/lineness/poligon-ii/discussions
+- **GitHub**: https://github.com/kvantora
+- **Issues**: https://github.com/kvantora/poligon-ii/issues
+- **Discussions**: https://github.com/kvantora/poligon-ii/discussions
 
 ---
 

@@ -1,4 +1,4 @@
-# JavaScript Модули проекта ЛИНЕСС
+# JavaScript Модули проекта КВАНТОРА
 
 ## Открытый проект для сообщества
 
@@ -13,7 +13,7 @@
 
 **Содержание**:
 ```javascript
-console.log('ЛИНЕСС open source project initialized successfully');
+console.log('КВАНТОРА open source project initialized successfully');
 ```
 
 **Примечание**: Простой лог, остальные модули инициализируются самостоятельно через DOMContentLoaded. Этот модуль демонстрирует философию минимализма и открытости кода.
@@ -272,7 +272,7 @@ portfolioLoader.load();
     "category": "opensource",
     "description": "Открытая панель управления для локальных сообществ",
     "image": "portfolio/project1.jpg",
-    "link": "https://github.com/lineness/community-dashboard"
+    "link": "https://github.com/kvantora/community-dashboard"
   }
 ]
 ```

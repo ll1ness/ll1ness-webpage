@@ -1,18 +1,18 @@
-# API Справочник проекта ЛИНЕСС
+# API Справочник проекта КВАНТОРА
 
 ## Открытый проект для сообщества
 
-Этот документ описывает публичные API модулей JavaScript, глобальные переменные, события и конфигурации проекта ЛИНЕСС - открытого проекта для сообщества разработчиков. Все компоненты доступны под лицензией MIT и предназначены для совместной работы над open source проектами.
+Этот документ описывает публичные API модулей JavaScript, глобальные переменные, события и конфигурации проекта КВАНТОРА - открытого проекта для сообщества разработчиков. Все компоненты доступны под лицензией MIT и предназначены для совместной работы над open source проектами.
 
 ## Глобальные объекты
 
-### window.LINESS (глобальный namespace)
+### window.KVANTORA (глобальный namespace)
 
 **Описание**: Основной namespace для всех модулей открытого проекта
 
 **Пример**:
 ```javascript
-window.LINESS = {
+window.KVANTORA = {
     cursor: CustomCursor,
     navigation: Navigation,
     background: GlobalBackground,
@@ -328,7 +328,7 @@ const portfolioLoader = new PortfolioLoader();
     "category": "opensource",
     "description": "Открытая панель управления для локальных сообществ",
     "image": "portfolio/project1.jpg",
-    "link": "https://github.com/lineness/community-dashboard"
+    "link": "https://github.com/kvantora/community-dashboard"
   },
   {
     "id": 2,
@@ -336,7 +336,7 @@ const portfolioLoader = new PortfolioLoader();
     "category": "web",
     "description": "Набор инструментов для разработчиков",
     "image": "portfolio/project2.jpg",
-    "link": "https://github.com/lineness/toolkit"
+    "link": "https://github.com/kvantora/toolkit"
   }
 ]
 ```
@@ -504,7 +504,7 @@ const chat = new ChatBot();
 - `chat:cleared` - при очистке истории
 
 **localStorage ключи**:
-- `lineness_chat_history` - массив сообщений
+- `kvantora_chat_history` - массив сообщений
 
 **Пример**:
 ```javascript
@@ -718,7 +718,7 @@ document.addEventListener('contribution:submitted', (e) => {
     "description": "Создаём и поддерживаем открытые проекты для сообщества",
     "image": "services/opensource.svg",
     "tags": ["GitHub", "Community", "Free"],
-    "github": "https://github.com/lineness",
+    "github": "https://github.com/kvantora",
     "contributors": 15,
     "stars": 234
   },
@@ -755,8 +755,8 @@ document.addEventListener('contribution:submitted', (e) => {
     "category": "opensource",
     "description": "Открытая панель управления для локальных сообществ",
     "image": "portfolio/project1.jpg",
-    "link": "https://github.com/lineness/community-dashboard",
-    "github": "lineness/community-dashboard",
+    "link": "https://github.com/kvantora/community-dashboard",
+    "github": "kvantora/community-dashboard",
     "tags": ["React", "Node.js", "Open Source"],
     "stars": 156,
     "forks": 34,
@@ -769,8 +769,8 @@ document.addEventListener('contribution:submitted', (e) => {
     "category": "web",
     "description": "Набор инструментов для разработчиков",
     "image": "portfolio/project2.jpg",
-    "link": "https://github.com/lineness/toolkit",
-    "github": "lineness/toolkit",
+    "link": "https://github.com/kvantora/toolkit",
+    "github": "kvantora/toolkit",
     "tags": ["JavaScript", "CLI", "DevTools"],
     "stars": 89,
     "forks": 12,
@@ -816,14 +816,14 @@ fetch(`https://api.github.com/repos/${github}`)
 <div class="reveal" data-reveal-offset="100" data-reveal-duration="1s">Контент</div>
 
 <!-- Для проектов -->
-<div class="project-card" data-github="lineness/project">...</div>
+<div class="project-card" data-github="kvantora/project">...</div>
 ```
 
 ### Настройки через JavaScript
 
 ```javascript
 // Глобальные настройки
-window.LINESS_CONFIG = {
+window.KVANTORA_CONFIG = {
     animationDuration: 800,
     scrollOffset: 80,
     enableParallax: true,
@@ -974,7 +974,7 @@ loadData(url) {
 MIT License - свободное использование, модификация и распространение.
 
 ### Кодекс поведения:
-Сообщество ЛИНЕСС придерживается принципов открытости, уважения и сотрудничества. Все контрибьюторы должны соблюдать Code of Conduct.
+Сообщество КВАНТОРА придерживается принципов открытости, уважения и сотрудничества. Все контрибьюторы должны соблюдать Code of Conduct.
 
 ---
 

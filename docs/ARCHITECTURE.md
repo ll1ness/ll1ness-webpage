@@ -1,4 +1,4 @@
-# Архитектура проекта ЛИНЕСС
+# Архитектура проекта КВАНТОРА
 
 ## Общая архитектура
 
@@ -200,7 +200,7 @@ if (document.readyState === 'loading') {
     "category": "opensource",
     "description": "Открытая панель управления для локальных сообществ",
     "image": "portfolio/project1.jpg",
-    "link": "https://github.com/lineness/community-dashboard"
+    "link": "https://github.com/kvantora/community-dashboard"
   }
 ]
 ```
