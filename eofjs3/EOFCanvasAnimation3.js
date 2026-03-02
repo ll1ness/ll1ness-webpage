@@ -3,7 +3,7 @@ const heroCanvas = document.getElementById('heroCanvas');
 if (heroCanvas) {
     const ctx = heroCanvas.getContext('2d');
     let particles = [];
-    const particleCount = 100;
+    const particleCount = 80;
 
     function resizeCanvas() {
         heroCanvas.width = window.innerWidth;
@@ -17,7 +17,7 @@ if (heroCanvas) {
             this.size = Math.random() * 2 + 0.5;
             this.speedX = Math.random() * 0.5 - 0.25;
             this.speedY = Math.random() * 0.5 - 0.25;
-            this.opacity = Math.random() * 0.5 + 0.1;
+            this.opacity = Math.random() * 0.3 + 0.05;
         }
 
         update() {
@@ -31,7 +31,7 @@ if (heroCanvas) {
         }
 
         draw() {
-            ctx.fillStyle = `rgba(99, 102, 241, ${this.opacity})`;
+            ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.fill();
@@ -57,7 +57,7 @@ if (heroCanvas) {
             particles.slice(i + 1).forEach(p2 => {
                 const distance = Math.hypot(p1.x - p2.x, p1.y - p2.y);
                 if (distance < 100) {
-                    ctx.strokeStyle = `rgba(99, 102, 241, ${0.1 * (1 - distance / 100)})`;
+                    ctx.strokeStyle = `rgba(255, 255, 255, ${0.05 * (1 - distance / 100)})`;
                     ctx.lineWidth = 0.5;
                     ctx.beginPath();
                     ctx.moveTo(p1.x, p1.y);

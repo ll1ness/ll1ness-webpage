@@ -26,15 +26,15 @@ function animateCursor() {
 }
 animateCursor();
 
-// Cursor hide on link hover
+// Cursor scale effect on hover (not hide)
 const hoverElements = document.querySelectorAll('a, button, .service-card, .portfolio-item, .filter-btn');
 hoverElements.forEach(el => {
     el.addEventListener('mouseenter', () => {
-        cursor.style.opacity = '0';
-        cursorFollower.style.opacity = '0';
+        cursor.style.transform = 'scale(1.5)';
+        cursorFollower.style.transform = 'scale(1.2)';
     });
     el.addEventListener('mouseleave', () => {
-        cursor.style.opacity = '1';
-        cursorFollower.style.opacity = '1';
+        cursor.style.transform = 'scale(1)';
+        cursorFollower.style.transform = 'scale(1)';
     });
 });
