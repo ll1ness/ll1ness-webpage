@@ -1,4 +1,8 @@
 /* ===== Custom Cursor ===== */
+* {
+    cursor: none !important;
+}
+
 .cursor {
     width: 12px;
     height: 12px;

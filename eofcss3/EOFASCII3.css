@@ -1,7 +1,6 @@
 /* ===== ASCII Section ===== */
 .ascii-section {
-    background: rgba(20, 20, 20, 0.7);
-    backdrop-filter: blur(20px);
+    background: transparent;
     padding: 80px 24px;
     overflow-x: hidden;
     position: relative;
@@ -24,7 +23,7 @@
     margin: 40px 0;
     border-top: 1px solid var(--glass-border);
     border-bottom: 1px solid var(--glass-border);
-    background: rgba(0, 0, 0, 0.3);
+    background: transparent;
     border-radius: var(--radius-md);
 }
 

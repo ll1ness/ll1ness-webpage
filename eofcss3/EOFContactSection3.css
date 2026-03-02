@@ -1,7 +1,6 @@
 /* ===== Contact Section ===== */
 .contact {
-    background: rgba(20, 20, 20, 0.7);
-    backdrop-filter: blur(20px);
+    background: transparent;
 }
 
 .contact-wrapper {

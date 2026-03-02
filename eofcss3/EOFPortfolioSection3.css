@@ -1,7 +1,6 @@
 /* ===== Portfolio Section ===== */
 .portfolio {
-    background: rgba(20, 20, 20, 0.7);
-    backdrop-filter: blur(20px);
+    background: transparent;
 }
 
 .portfolio-filters {
