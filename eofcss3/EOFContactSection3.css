@@ -91,9 +91,11 @@
     transition: all var(--transition-fast);
 }
 
-.social-link svg {
+.social-link svg,
+.social-link img {
     width: 20px;
     height: 20px;
+    filter: grayscale(100%) brightness(300%);
 }
 
 .social-link:hover {
@@ -103,3 +105,7 @@
     transform: translateY(-4px);
 }
 
+.social-link:hover svg,
+.social-link:hover img {
+    filter: none;
+}
