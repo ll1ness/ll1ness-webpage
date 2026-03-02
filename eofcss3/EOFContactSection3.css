@@ -1,6 +1,6 @@
 /* ===== Contact Section ===== */
 .contact {
-    background: var(--color-bg-secondary);
+    background: transparent;
 }
 
 .contact-wrapper {

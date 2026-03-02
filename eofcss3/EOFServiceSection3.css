@@ -1,6 +1,6 @@
 /* ===== Services Section ===== */
 .services {
-    background: var(--color-bg-secondary);
+    background: transparent;
 }
 
 .services-grid {

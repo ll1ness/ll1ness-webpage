@@ -1,6 +1,6 @@
 /* ===== About Section ===== */
 .about {
-    background: var(--color-bg);
+    background: transparent;
 }
 
 .about-content {

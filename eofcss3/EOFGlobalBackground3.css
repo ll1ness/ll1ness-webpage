@@ -5,7 +5,6 @@
     z-index: -1;
     overflow: hidden;
     pointer-events: none;
-    background: var(--color-bg);
 }
 
 .bg-orb {
