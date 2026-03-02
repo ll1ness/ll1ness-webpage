@@ -20,6 +20,32 @@ body {
     cursor: none;
 }
 
+/* Global Link Styles */
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+    cursor: none;
+}
+
+a:hover {
+    color: var(--color-accent);
+}
+
+a:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Global Button Reset (for buttons not using .btn class) */
+button {
+    cursor: none;
+    font-family: inherit;
+    border: none;
+    background: none;
+    color: inherit;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
