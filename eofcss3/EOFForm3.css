@@ -1,12 +1,4 @@
 /* ===== Contact Form ===== */
-.contact-form {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius-xl);
-    padding: 40px;
-    backdrop-filter: blur(20px);
-}
-
 .form-group {
     position: relative;
     margin-bottom: 24px;
@@ -23,13 +15,14 @@
     font-size: 1rem;
     font-family: inherit;
     transition: all var(--transition-fast);
+    cursor: none;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: var(--color-primary);
-    background: rgba(99, 102, 241, 0.05);
+    background: rgba(255, 255, 255, 0.05);
 }
 
 .form-group label {
@@ -56,4 +49,3 @@
     font-size: 0.75rem;
     color: var(--color-primary);
 }
-
