@@ -1,50 +1,18 @@
 [
   {
     "id": 1,
-    "title": "Community Dashboard",
+    "title": "Weather seeker",
     "category": "opensource",
-    "description": "Открытая панель управления для локальных сообществ",
-    "image": "portfolio/project1.jpg",
-    "link": "https://github.com/kvantora/community-dashboard"
+    "description": "Просмотр прогноза погоды до 15 дней.",
+    "image": "scr1.png",
+    "link": "https://ll1ness.zapto.org/ws"
   },
   {
     "id": 2,
-    "title": "Dev Toolkit",
+    "title": "TechOne UI",
     "category": "opensource",
-    "description": "Набор инструментов для разработчиков с открытым исходным кодом",
-    "image": "portfolio/project2.jpg",
-    "link": "https://github.com/kvantora/dev-toolkit"
-  },
-  {
-    "id": 3,
-    "title": "Hackathon Platform",
-    "category": "web",
-    "description": "Платформа для организации и проведения хакатонов",
-    "image": "portfolio/project3.jpg",
-    "link": "https://github.com/kvantora/hackathon-platform"
-  },
-  {
-    "id": 4,
-    "title": "Learning Resources",
-    "category": "education",
-    "description": "Библиотека бесплатных учебных материалов и курсов",
-    "image": "portfolio/project4.jpg",
-    "link": "https://github.com/kvantora/learning-resources"
-  },
-  {
-    "id": 5,
-    "title": "Open Source Contribution Guide",
-    "category": "education",
-    "description": "Руководство по участию в open source проектах на русском",
-    "image": "portfolio/project5.jpg",
-    "link": "https://github.com/kvantora/contribution-guide"
-  },
-  {
-    "id": 6,
-    "title": "Community Chat",
-    "category": "collaboration",
-    "description": "Открытый чат для разработчиков с модерацией и поддержкой",
-    "image": "portfolio/project6.jpg",
-    "link": "https://github.com/kvantora/community-chat"
+    "description": "Библиотека для UI в стиле матрицы.",
+    "image": "scr2.png",
+    "link":"https://ll1ness.github.io/TechOne-UI/"
   }
 ]

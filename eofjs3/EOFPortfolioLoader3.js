@@ -13,7 +13,7 @@ async function loadPortfolio() {
                         <div class="portfolio-overlay">
                             <h3>${item.title}</h3>
                             <p>${item.description}</p>
-                            <span class="portfolio-link">Подробнее →</span>
+                            <a href="${item.link}" class="portfolio-link" target="_blank" rel="noopener noreferrer">Подробнее →</a>
                         </div>
                     </div>
                 `).join('');
