@@ -1,8 +1,8 @@
-// ===== Contact Form =====
+// ===== Contact Form with AppWrite Integration =====
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
         const formData = new FormData(contactForm);
@@ -23,12 +23,25 @@ if (contactForm) {
         submitBtn.textContent = 'Отправка...';
         submitBtn.disabled = true;
 
-        setTimeout(() => {
+        try {
+            // Try to submit via AppWrite
+            if (window.appwriteService && window.appwriteService.initialized) {
+                const result = await window.appwriteService.submitContactForm(data);
+                console.log('Contact form submitted via:', result.source);
+            } else {
+                // Fallback: simulate success (or use localStorage fallback inside service)
+                await new Promise(resolve => setTimeout(resolve, 1000));
+            }
+            
             showNotification('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.', 'success');
             contactForm.reset();
+        } catch (error) {
+            console.error('Contact form submission error:', error);
+            showNotification('Произошла ошибка при отправке. Пожалуйста, попробуйте позже.', 'error');
+        } finally {
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
-        }, 1500);
+        }
     });
 }
 
