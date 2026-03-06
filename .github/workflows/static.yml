@@ -35,15 +35,6 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Verify starter-for-js directory
-        run: ls -la
-
-      - name: Build starter-for-js
-        run: |
-          cd starter-for-js
-          npm ci
-          npm run build
-
       - name: Publish to GitHub Packages
         run: |
           cd starter-for-js
