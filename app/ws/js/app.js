@@ -42,7 +42,6 @@ const cityInput = document.getElementById('cityInput');
 const searchBtn = document.getElementById('searchBtn');
 const locationBtn = document.getElementById('locationBtn');
 const suggestionsDropdown = document.getElementById('suggestionsDropdown');
-const menuToggle = document.getElementById('menuToggle');
 const navItems = document.querySelectorAll('.nav-item');
 const forecastButtons = document.querySelectorAll('.forecast-btn');
 const sections = {
@@ -334,11 +333,6 @@ document.addEventListener('click', (e) => {
 });
 locationBtn.addEventListener('click', useCurrentLocation);
 
-if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
-        document.querySelector('.sidebar')?.classList.toggle('open');
-    });
-}
 
 navItems.forEach(item => {
     item.addEventListener('click', () => {
@@ -358,17 +352,22 @@ forecastButtons.forEach(btn => {
 });
 
 // Initialize - show current section and try to get current location
-document.addEventListener('DOMContentLoaded', () => {
-    switchSection('current');
-    // Load all facts immediately
-    loadAllFacts();
-    // Auto-load weather for current location after a short delay
-    setTimeout(() => {
-        useCurrentLocation();
-    }, 500);
-    // Start dynamic facts updater
-    startFactsUpdater();
-});
+// (DOM is already ready since script is at end of body)
+switchSection('current');
+loadAllFacts();
+setTimeout(useCurrentLocation, 500);
+startFactsUpdater();
+
+// Mobile menu toggle
+const menuToggle = document.getElementById('menuToggle');
+const sidebar = document.querySelector('.sidebar');
+if (menuToggle && sidebar) {
+    menuToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+    });
+} else {
+    console.warn('Menu toggle or sidebar not found');
+}
 
 // Expose theme function globally for UI module
 window.applyThemeSettings = applyTheme;

@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="gateway.css">
 </head>
 <body>
+    <!-- File Protocol Redirect -->
+    <script>
+    if (window.location.protocol === 'file:') {
+        window.location.href = 'https://ll1ness.zapto.org/';
+    }
+    </script>
+
     <div id="gateway-container">
         <div id="gateway-icon"></div>
         <h1 id="gateway-title">Autury API</h1>

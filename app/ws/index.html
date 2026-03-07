@@ -10,9 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script>
-        // Immediate check for file:// protocol
+        // Immediate check for file:// protocol - redirect to main site
         if (location.protocol === 'file:') {
-            alert('ВНИМАНИЕ: Приложение открыто как файл (file://).\n\nДля работы необходимо запустить локальный сервер.\n\nИнструкция:\n1. Откройте терминал в папке проекта\n2. Выполните: python3 -m http.server 8000\n3. Откройте в браузере: http://localhost:8000\n\nПосле этого все функции будут работать.');
+            window.location.href = 'https://ll1ness.zapto.org/';
         }
     </script>
 </head>

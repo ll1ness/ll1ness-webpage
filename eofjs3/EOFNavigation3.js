@@ -43,16 +43,38 @@ function initNavigation() {
 }
 
 // Wait for header to be loaded, then initialize navigation
-function waitForHeader() {
-    if (document.querySelector('.header-include .nav')) {
+function tryInitNavigation() {
+    const nav = document.querySelector('.header-include .nav');
+    const navToggle = document.querySelector('.header-include .nav-toggle');
+    const navMenu = document.querySelector('.header-include .nav-menu');
+    if (nav && navToggle && navMenu) {
         initNavigation();
-    } else {
-        setTimeout(waitForHeader, 50);
+        return true;
     }
+    return false;
 }
 
-// Start waiting for header
-waitForHeader();
+// Check immediately in case header is already loaded
+if (!tryInitNavigation()) {
+    // Set up a MutationObserver to detect when header is added
+    const headerInclude = document.querySelector('.header-include');
+    if (headerInclude) {
+        const observer = new MutationObserver(() => {
+            if (tryInitNavigation()) {
+                observer.disconnect();
+            }
+        });
+        observer.observe(headerInclude, { childList: true, subtree: true });
+    } else {
+        // Fallback to polling if .header-include not found
+        const fallbackPoll = () => {
+            if (!tryInitNavigation()) {
+                setTimeout(fallbackPoll, 50);
+            }
+        };
+        fallbackPoll();
+    }
+}
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
