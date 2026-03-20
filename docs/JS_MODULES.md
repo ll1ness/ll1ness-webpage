@@ -72,29 +72,36 @@ navLinks.forEach(link => link.addEventListener('click', closeMenu));
 **Доступность**: Соответствует стандартам WCAG 2.1, поддерживает фокус-менеджмент.
 
 #### 4. EOFChat3.js
-**Назначение**: Чат-бот для взаимодействия с сообществом
+**Purpose**: Chat interface with first message modal notification
 
-**Класс**: `ChatBot`
+**Features**:
+- Message sending and receiving
+- Local storage for chat history
+- First message modal notification
+- Responsive design with glassmorphism
+- Cross-browser compatibility
 
-**Функционал**:
-- Отправка сообщений
-- Получение ответов (симуляция ИИ)
-- Хранение истории в localStorage
-- Индикатор онлайн-статуса
-- Поддержка markdown в ответах
-
-**Использование**:
+**Usage**:
 ```javascript
-const chat = new ChatBot();
-chat.init();
+// Chat is initialized automatically when DOM is ready
+// No explicit initialization required
 ```
 
 **API**:
-- `sendMessage(text)` - отправить сообщение
-- `getResponse(userMessage)` - получить ответ (искусственный интеллект)
-- `saveHistory()` / `loadHistory()` - работа с localStorage
+- `sendMessage()` - Send user message (triggered by button or Enter key)
+- `addMessageToChat(text, sender, time, save)` - Add message to chat UI
+- `loadChatHistory()` - Load chat history from storage
 
-**Сообщество**: Чат-бот может быть расширен сообществом для ответов на часто задаваемые вопросы о проекте.
+**Modal Feature**:
+- Shows modal on first user message
+- Explains local storage usage
+- Can be closed by button or clicking outside
+- Styled to match site design
+
+**Storage**:
+- Uses localStorage as fallback when AppWrite is unavailable
+- Stores messages with sender, text, and timestamp
+- Session-based storage for AppWrite integration
 
 ### Анимации
 
