@@ -3,16 +3,24 @@
     "id": 1,
     "title": "Weather seeker",
     "category": "opensource",
-    "description": "Просмотр прогноза погоды до 15 дней.",
+    "description": "View weather forecast up to 15 days.",
     "image": "scr1.png",
-    "link": "https://ll1ness.zapto.org/app/ws/"
+    "site": "https://ll1ness.zapto.org/app/ws/",
+    "wiki": "https://ll1ness.zapto.org/app/ws/",
+    "badges": ["JavaScript", "Weather API", "Responsive"],
+    "logo": "icons/ws.png",
+    "copyright": "© 2026 ll1ness. Все права сохранены."
   },
   {
     "id": 2,
     "title": "TechOne UI",
     "category": "opensource",
-    "description": "Библиотека для UI в стиле матрицы.",
+    "description": "UI library in matrix style.",
     "image": "scr2.png",
-    "link":"https://ll1ness.github.io/TechOne-UI/"
+    "site": "https://ll1ness.github.io/techone-ui/",
+    "wiki": "https://github.com/ll1ness/TechOne-UI/wiki",
+    "badges": ["CSS", "UI Components", "Matrix"],
+    "logo": "icons/toui.png",
+    "copyright": "© 2026 ll1ness. Все права сохранены."
   }
 ]
