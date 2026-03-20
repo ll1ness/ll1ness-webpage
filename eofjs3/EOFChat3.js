@@ -104,10 +104,7 @@ async function sendMessage() {
     // Simulate bot response (could be replaced with AppWrite Functions/AI)
     setTimeout(() => {
         const responses = [
-            "Спасибо за сообщение! Наш специалист ответит вам в ближайшее время.",
-            "Отличный вопрос! Давайте обсудим детали в чате.",
-            "Мы готовы помочь! Опишите ваш проект подробнее.",
-            "Интересно! Можете рассказать больше о ваших целях?"
+            "Спасибо за сообщение! Наш специалист ответит вам в ближайшее время."
         ];
         const randomResponse = responses[Math.floor(Math.random() * responses.length)];
         const botTime = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
@@ -120,6 +117,48 @@ chatInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') sendMessage();
 });
 
+// Modified sendMessage function to show modal on first message
+async function sendMessage() {
+    const message = chatInput.value.trim();
+    if (!message) return;
+
+    const time = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+    addMessageToChat(message, 'user', time);
+    chatInput.value = '';
+
+    // If using AppWrite, ensure message is saved with session
+    if (window.appwriteService && window.appwriteService.initialized) {
+        try {
+            await window.appwriteService.saveChatMessage({
+                text: message,
+                sender: 'user',
+                sessionId: window.appwriteService.getSessionId()
+            });
+        } catch (error) {
+            console.warn('Failed to save user message to AppWrite:', error);
+        }
+    }
+
+    // Show modal on first user message
+    if (isFirstMessage) {
+        isFirstMessage = false;
+        showFirstMessageModal();
+    }
+
+    // Simulate bot response (could be replaced with AppWrite Functions/AI)
+    setTimeout(() => {
+        const responses = [
+            "Спасибо за сообщение! Наш специалист ответит вам в ближайшее время.",
+            "Отличный вопрос! Давайте обсудим детали в чате.",
+            "Мы готовы помочь! Опишите ваш проект подробнее.",
+            "Интересно! Можете рассказать больше о ваших целях?"
+        ];
+        const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+        const botTime = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+        addMessageToChat(randomResponse, 'bot', botTime);
+    }, 1000);
+}
+
 // Chat trigger
 document.querySelectorAll('.chat-trigger').forEach(trigger => {
     trigger.addEventListener('click', (e) => {
@@ -128,6 +167,36 @@ document.querySelectorAll('.chat-trigger').forEach(trigger => {
         setTimeout(() => chatInput.focus(), 500);
     });
 });
+
+// Initialize chat
+let isFirstMessage = true;
+
+// Modal for first message notification
+function showFirstMessageModal() {
+    const modal = document.createElement('div');
+    modal.className = 'chat-first-message-modal';
+    modal.innerHTML = `
+        <div class="chat-first-message-content">
+            <div class="chat-first-message-icon">💬</div>
+            <h3>Сообщения сохраняются на вашем устройстве</h3>
+            <p>Ваши сообщения сохраняются на вашем устройстве в вашем браузере. Просьба переходить на сайт с того устройства, с которого отправляли сообщения.</p>
+            <button class="chat-first-message-close">Понятно</button>
+        </div>
+    `;
+    document.body.appendChild(modal);
+    
+    // Close button
+    modal.querySelector('.chat-first-message-close').addEventListener('click', () => {
+        modal.remove();
+    });
+    
+    // Click outside to close
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.remove();
+        }
+    });
+}
 
 // Initialize chat
 loadChatHistory();
