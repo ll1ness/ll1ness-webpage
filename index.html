@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<!-- SEO Meta Tags -->
+<meta name="description" content="ЛИНЕСС - Разработчик открытых проектов. Создаю инструменты, библиотеки и платформы. Open source, веб-разработка, образование.">
+<meta name="keywords" content="ЛИНЕСС, open source, разработка, веб, JavaScript, Python, GitHub, инструменты, библиотеки, образование">
+<meta name="author" content="ЛИНЕСС">
+<meta name="robots" content="index, follow">
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ll1ness.zapto.org/">
+<meta property="og:title" content="ЛИНЕСС - Разработка цифровых проектов">
+<meta property="og:description" content="Сообщество разработчиков открытых проектов. Создаём инструменты, библиотеки и платформы для разработчиков.">
+<meta property="og:image" content="https://ll1ness.zapto.org/logo.png">
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://ll1ness.zapto.org/">
+<meta property="twitter:title" content="ЛИНЕСС - Разработка цифровых проектов">
+<meta property="twitter:description" content="Сообщество разработчиков открытых проектов. Создаём инструменты, библиотеки и платформы для разработчиков.">
+<meta property="twitter:image" content="https://ll1ness.zapto.org/logo.png">
+<!-- Canonical URL -->
+<link rel="canonical" href="https://ll1ness.zapto.org/">
+<title>ЛИНЕСС</title>
+    <!-- TechOne UI Library -->
+    <script src="lib/techon-ui.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Дополнительные стили для компонентов, не представленных в techone-ui */
+        :root {
+            --font-main: 'JetBrains Mono', monospace;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* AI Background */
+        .ai-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: -1;
+            background: var(--to-bg, #030303);
+        }
+        
+        .ai-network {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.08) 0%, transparent 30%),
+                radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.08) 0%, transparent 35%),
+                radial-gradient(circle at 45% 75%, rgba(255, 255, 255, 0.08) 0%, transparent 30%),
+                radial-gradient(circle at 85% 25%, rgba(255, 255, 255, 0.08) 0%, transparent 35%),
+                radial-gradient(circle at 15% 85%, rgba(255, 255, 255, 0.08) 0%, transparent 30%);
+            filter: blur(40px);
+            animation: ai-pulse 10s ease-in-out infinite;
+        }
+        
+        @keyframes ai-pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.8; }
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(var(--to-bg-rgb, 3, 3, 3), 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--to-border, #1a1a1a);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--to-text, #f0f0f0);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+        
+        .nav-logo-img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-link {
+            color: var(--to-text-muted, #a0a0a0);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--to-text, #f0f0f0);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--to-primary, #ffa502);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+        
+        .nav-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--to-text, #f0f0f0);
+            transition: all 0.3s ease;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 24px 120px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-matrix-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(255, 165, 2, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 50%, rgba(255, 165, 2, 0.05) 0%, transparent 50%);
+        }
+        
+        .hero-scanline {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 165, 2, 0.02) 2px,
+                rgba(255, 165, 2, 0.02) 4px
+            );
+        }
+        
+        .hero-container {
+            max-width: 1100px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        /* Left Side */
+        .hero-left {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .hero-logo-img {
+            width: 120px;
+            height: 120px;
+            animation: logoFloat 4s ease-in-out infinite;
+        }
+        
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+        
+        .hero-title-text {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--to-text);
+            margin: 0;
+            letter-spacing: -1px;
+        }
+        
+        .hero-subtitle-text {
+            font-size: 1rem;
+            color: var(--to-text-muted);
+            margin: 0 0 8px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+        
+        /* Right Side - Floating Cards */
+        .hero-right {
+            position: relative;
+            height: 350px;
+        }
+        
+        .hero-right .floating-card {
+            position: absolute;
+            background: var(--to-bg-card);
+            border: 1px solid var(--to-border);
+            border-radius: 12px;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .hero-right .floating-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: var(--to-primary);
+            box-shadow: 0 16px 48px rgba(255, 165, 2, 0.2);
+        }
+        
+        .hero-right .card-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--to-bg-tertiary);
+            border-radius: 12px;
+            color: var(--to-primary);
+        }
+        
+        .hero-right .card-icon .material-icons {
+            font-size: 24px;
+        }
+        
+        .hero-right .card-content {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .hero-right .card-title {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--to-text);
+        }
+        
+        .hero-right .card-desc {
+            font-size: 12px;
+            color: var(--to-text-muted);
+        }
+        
+        .hero-right .card-1 {
+            top: 0;
+            right: 20px;
+            transform: rotate(-5deg);
+            animation: cardFloat1 6s ease-in-out infinite;
+        }
+        
+        .hero-right .card-2 {
+            top: 45%;
+            right: 0;
+            transform: rotate(3deg);
+            animation: cardFloat2 7s ease-in-out infinite;
+        }
+        
+        .hero-right .card-3 {
+            bottom: 0;
+            right: 40px;
+            transform: rotate(-2deg);
+            animation: cardFloat3 5s ease-in-out infinite;
+        }
+        
+        @keyframes cardFloat1 {
+            0%, 100% { transform: rotate(-5deg) translateY(0); }
+            50% { transform: rotate(-5deg) translateY(-15px); }
+        }
+        
+        @keyframes cardFloat2 {
+            0%, 100% { transform: rotate(3deg) translateY(0); }
+            50% { transform: rotate(3deg) translateY(-20px); }
+        }
+        
+        @keyframes cardFloat3 {
+            0%, 100% { transform: rotate(-2deg) translateY(0); }
+            50% { transform: rotate(-2deg) translateY(-12px); }
+        }
+        
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .scroll-indicator .mouse {
+            width: 24px;
+            height: 40px;
+            border: 2px solid var(--to-text-muted);
+            border-radius: 12px;
+            position: relative;
+        }
+        
+        .scroll-indicator .wheel {
+            width: 4px;
+            height: 8px;
+            background: var(--to-primary);
+            border-radius: 2px;
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scroll 2s ease-in-out infinite;
+        }
+        
+        @keyframes scroll {
+            0%, 100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+            50% { opacity: 0.3; transform: translateX(-50%) translateY(10px); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 60px;
+            }
+            
+            .hero-left {
+                align-items: center;
+            }
+            
+            .hero-right {
+                display: none;
+            }
+            
+            .hero-title-text {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 100px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-label {
+            display: inline-block;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--to-primary, #ffa502);
+            margin-bottom: 12px;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0 0 48px;
+        }
+        
+        /* ASCII Section */
+        .ascii-section {
+            padding: 80px 24px;
+            text-align: center;
+            background: var(--to-bg-secondary, #0a0a0a);
+        }
+        
+        .ascii-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .ascii-title {
+            font-size: 10px;
+            line-height: 1.2;
+            color: var(--to-text-muted, #a0a0a0);
+            margin: 0;
+            overflow-x: auto;
+        }
+        
+        .ascii-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 24px 0 0;
+        }
+        
+        /* Portfolio */
+        .portfolio {
+            padding: 100px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .portfolio-filters {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: transparent;
+            border: 1px solid var(--to-border, #1a1a1a);
+            color: var(--to-text-muted, #a0a0a0);
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            border-color: var(--to-primary, #ffa502);
+            color: var(--to-primary, #ffa502);
+            background: rgba(255, 165, 2, 0.1);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .portfolio-item {
+            background: var(--to-bg-card, #0c0c0c);
+            border: 1px solid var(--to-border, #1a1a1a);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .portfolio-item.hidden {
+            display: none;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--to-primary, #ffa502);
+            box-shadow: 0 16px 48px rgba(255, 165, 2, 0.2);
+        }
+        
+        .portfolio-item-image {
+            height: 140px;
+            background: var(--to-bg-tertiary, #0f0f0f);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--to-text-muted, #a0a0a0);
+        }
+        
+        .portfolio-item-content {
+            padding: 24px;
+        }
+        
+        .portfolio-item-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 0 0 12px;
+        }
+        
+        .portfolio-item-desc {
+            font-size: 14px;
+            color: var(--to-text-muted, #a0a0a0);
+            margin: 0 0 16px;
+            line-height: 1.6;
+        }
+        
+        .portfolio-item-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        
+        .portfolio-item-tag {
+            font-size: 12px;
+            padding: 6px 14px;
+            background: linear-gradient(135deg, var(--to-bg-tertiary, #0f0f0f), rgba(255, 165, 2, 0.15));
+            border: 1px solid var(--to-border, #1a1a1a);
+            border-radius: 20px;
+            color: var(--to-text-muted, #a0a0a0);
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-item-tag:hover {
+            border-color: var(--to-primary, #ffa502);
+            color: var(--to-primary, #ffa502);
+            background: rgba(255, 165, 2, 0.1);
+        }
+        
+        .portfolio-item-link {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 36px;
+            height: 36px;
+            background: var(--to-bg-card, #0c0c0c);
+            border: 1px solid var(--to-border, #1a1a1a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--to-text-muted, #a0a0a0);
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+        
+        .portfolio-item:hover .portfolio-item-link {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .portfolio-item-link:hover {
+            background: var(--to-primary, #ffa502);
+            color: var(--to-bg, #030303);
+            border-color: var(--to-primary, #ffa502);
+        }
+
+        .portfolio-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--to-primary, #ffa502), #ff6b00);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .portfolio-item:hover::before {
+            opacity: 1;
+        }
+        
+        .portfolio-item-image {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portfolio-item-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.4) 100%);
+        }
+        
+        .portfolio-item-image .material-icons {
+            font-size: 48px;
+            opacity: 0.5;
+        }
+        
+        .portfolio-item-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .portfolio-item-title::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--to-primary, #ffa502);
+            transition: width 0.3s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-item-title::after {
+            width: 100%;
+        }
+        
+        /* About */
+        .about {
+            padding: 100px 24px;
+            background: transparent;
+        }
+        
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .about-desc {
+            font-size: 1.125rem;
+            color: var(--to-text-muted, #a0a0a0);
+            margin: 0 0 40px;
+            max-width: 600px;
+            line-height: 1.8;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 32px;
+            background: var(--to-bg-card, #0c0c0c);
+            border: 1px solid var(--to-border, #1a1a1a);
+            border-radius: 12px;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--to-primary, #ffa502);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: var(--to-text-muted, #a0a0a0);
+        }
+        
+        /* Contact */
+        .contact {
+            padding: 100px 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        
+        .contact-desc {
+            font-size: 1rem;
+            color: var(--to-text-muted, #a0a0a0);
+            margin: 0 0 32px;
+            line-height: 1.6;
+        }
+        
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--to-bg-tertiary, #0f0f0f);
+            border: 1px solid var(--to-border, #1a1a1a);
+            border-radius: 12px;
+            color: var(--to-primary, #ffa502);
+        }
+        
+        .contact-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .contact-text .label {
+            font-size: 12px;
+            color: var(--to-text-muted, #a0a0a0);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .contact-text a {
+            color: var(--to-text, #f0f0f0);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-text a:hover {
+            color: var(--to-primary, #ffa502);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+        
+        .social-link {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--to-bg-tertiary, #0f0f0f);
+            border: 1px solid var(--to-border, #1a1a1a);
+            border-radius: 12px;
+            color: var(--to-text-muted, #a0a0a0);
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            border-color: var(--to-primary, #ffa502);
+            color: var(--to-primary, #ffa502);
+            transform: translateY(-4px);
+        }
+        
+        .social-link svg {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .social-link img {
+            width: 24px;
+            height: 24px;
+        }
+        
+        /* Chat */
+        .chat-container {
+            background: var(--to-bg-card, #0c0c0c);
+            border: 1px solid var(--to-border, #1a1a1a);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        
+        .chat-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px;
+            background: var(--to-bg-tertiary, #0f0f0f);
+            border-bottom: 1px solid var(--to-border, #1a1a1a);
+        }
+        
+        .chat-avatar {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--to-primary, #ffa502);
+            border-radius: 50%;
+            color: var(--to-bg, #030303);
+        }
+        
+        .chat-header-info h4 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .chat-header-info p {
+            margin: 4px 0 0;
+            font-size: 12px;
+            color: var(--to-text-muted, #a0a0a0);
+        }
+        
+        .chat-status {
+            width: 8px;
+            height: 8px;
+            background: var(--to-warning, #cccc00);
+            border-radius: 50%;
+            margin-left: auto;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .chat-messages {
+            padding: 20px;
+            min-height: 300px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .chat-message {
+            padding: 16px;
+            background: var(--to-bg-tertiary, #0f0f0f);
+            border-radius: 12px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .chat-message.bot {
+            border-left: 3px solid var(--to-primary, #ffa502);
+        }
+        
+        .chat-message-time {
+            font-size: 11px;
+            color: var(--to-text-muted, #a0a0a0);
+            margin-top: 8px;
+        }
+        
+        .chat-input-area {
+            display: flex;
+            gap: 12px;
+            padding: 20px;
+            background: var(--to-bg-tertiary, #0f0f0f);
+            border-top: 1px solid var(--to-border, #1a1a1a);
+        }
+        
+        .chat-input {
+            flex: 1;
+            background: var(--to-bg-card, #0c0c0c);
+            border: 1px solid var(--to-border, #1a1a1a);
+            border-radius: 8px;
+            padding: 12px 16px;
+            color: var(--to-text, #f0f0f0);
+            font-family: inherit;
+            font-size: 14px;
+        }
+        
+        .chat-input::placeholder {
+            color: var(--to-text-muted, #a0a0a0);
+        }
+        
+        .chat-input:focus {
+            outline: none;
+            border-color: var(--to-primary, #ffa502);
+        }
+        
+        .chat-send {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--to-primary, #ffa502);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .chat-send svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--to-bg, #030303);
+        }
+        
+        .chat-send:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Footer styles moved to special/footer.html */
+        
+        /* Opening Badge */
+        .opening-badge {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            z-index: 999;
+            background: transparent;
+            color: #ff4444;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 2px solid rgba(255, 68, 68, 0.7);
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Theme Toggle */
+        .theme-toggle {
+            background: transparent;
+            border: 1px solid var(--to-border, #1a1a1a);
+            color: var(--to-text, #f0f0f0);
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle:hover {
+            border-color: var(--to-primary, #ffa502);
+        }
+        
+        /* Custom Cursor */
+        .cursor {
+            position: fixed;
+            width: 12px;
+            height: 12px;
+            background: var(--to-primary, #ffa502);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10000;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease;
+        }
+        
+        .cursor-follower {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--to-primary, #ffa502);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: transform 0.15s ease;
+            opacity: 0.6;
+        }
+            
+        /* Background Grid Pattern */
+        .bg-grid-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(255, 165, 2, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 165, 2, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: -2;
+        }
+        
+        /* Blueprint decorations */
+        .blueprint-decoration {
+            position: fixed;
+            width: 300px;
+            height: 300px;
+            opacity: 0.08;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .blueprint-decoration.left {
+            left: -100px;
+            bottom: 200px;
+            border: 1px solid var(--to-primary, #ffa502);
+            transform: rotate(15deg);
+        }
+        
+        .blueprint-decoration.right {
+            right: -100px;
+            top: 200px;
+            border: 1px solid var(--to-primary, #ffa502);
+            transform: rotate(-15deg);
+        }
+        
+        .blueprint-decoration::before {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 20%;
+            right: 20%;
+            bottom: 20%;
+            border: 1px solid var(--to-primary, #ffa502);
+        }
+        
+        .blueprint-decoration::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            right: 10%;
+            height: 1px;
+            background: var(--to-primary, #ffa502);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-extended {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--to-bg-card, #0c0c0c);
+                flex-direction: column;
+                padding: 24px;
+                gap: 16px;
+                border-bottom: 1px solid var(--to-border, #1a1a1a);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-toggle {
+                display: flex;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 24px;
+                text-align: center;
+            }
+            
+            .footer-links {
+                justify-content: center;
+            }
+            
+            .footer-extended {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-legal {
+                justify-content: center !important;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Background Grid Pattern -->
+    <div class="bg-grid-pattern"></div>
+
+    <!-- AI Background -->
+    <div class="ai-bg">
+        <div class="ai-network"></div>
+    </div>
+
+    <!-- File Protocol Redirect -->
+    <script>
+    if (window.location.protocol === 'file:') {
+        window.location.href = 'https://ll1ness.zapto.org/';
+    }
+    </script>
+
+    <!-- Opening Badge -->
+    <div class="opening-badge">🎉 Открытие 9 апреля</div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logo.png" alt="ЛИНЕСС" class="nav-logo-img" onerror="this.style.display='none'">
+                <span>ЛИНЕСС</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Главная</a></li>
+                <li><a href="about.html" class="nav-link">О проекте</a></li>
+                <li><a href="portfolio.html" class="nav-link">Проекты</a></li>
+                <li><a href="blog.html" class="nav-link">Блог</a></li>
+                <li><a href="https://github.com/ll1ness" class="nav-link" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="contact.html" class="nav-link">Связаться</a></li>
+                <li>
+                    <button class="theme-toggle" onclick="THEME.toggle()" title="Сменить тему">
+                        <span class="material-icons" style="font-size: 20px;">brightness_6</span>
+                    </button>
+                </li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-matrix-bg"></div>
+        <div class="hero-scanline"></div>
+        
+        <div class="hero-container">
+            <!-- Left Side -->
+            <div class="hero-left">
+                <img src="logo.svg" alt="LL1NESS" class="hero-logo-img">
+                <h1 class="hero-title-text">ЛИНЕСС</h1>
+                <p class="hero-subtitle-text">Платформа открытой разработки</p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="to-button" data-variant="primary" data-size="l">
+                        <span class="material-icons" style="font-size: 18px;">folder_open</span>
+                        Проекты
+                    </a>
+                    <a href="https://github.com/ll1ness" class="to-button" data-variant="secondary" data-size="l" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Right Side - Floating Cards -->
+            <div class="hero-right">
+                <div class="floating-card card-1">
+                    <div class="card-icon"><span class="material-icons">code</span></div>
+                    <div class="card-content">
+                        <span class="card-title">Open Source</span>
+                        <span class="card-desc">100% бесплатно</span>
+                    </div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon"><span class="material-icons">extension</span></div>
+                    <div class="card-content">
+                        <span class="card-title">UI Компоненты</span>
+                        <span class="card-desc">TechOne UI</span>
+                    </div>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-icon"><span class="material-icons">rocket_launch</span></div>
+                    <div class="card-content">
+                        <span class="card-title">EOF.js</span>
+                        <span class="card-desc">20+ библиотек</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio section" id="portfolio">
+        <span class="section-label">Наши работы</span>
+        <h2 class="section-title">Наши последние работы</h2>
+        <div class="portfolio-grid" id="portfolioGrid">
+            <div class="portfolio-item" data-category="opensource">
+                <div class="portfolio-item-image"><span class="material-icons">cloud</span></div>
+                <div class="portfolio-item-content">
+                    <a href="https://ll1ness.zapto.org/app/ws/" class="portfolio-item-link" target="_blank" rel="noopener"><span class="material-icons" style="font-size:18px">open_in_new</span></a>
+                    <h3 class="portfolio-item-title">Weather Seeker</h3>
+                    <p class="portfolio-item-desc">Прогноз погоды до 15 дней с красивым интерфейсом в матричном стиле</p>
+                    <div class="portfolio-item-tags"><span class="portfolio-item-tag">JavaScript</span><span class="portfolio-item-tag">Weather API</span><span class="portfolio-item-tag">Responsive</span></div>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="opensource">
+                <div class="portfolio-item-image"><span class="material-icons">dashboard</span></div>
+                <div class="portfolio-item-content">
+                    <a href="https://ll1ness.github.io/techone-ui/" class="portfolio-item-link" target="_blank" rel="noopener"><span class="material-icons" style="font-size:18px">open_in_new</span></a>
+                    <h3 class="portfolio-item-title">TechOne UI</h3>
+                    <p class="portfolio-item-desc">Библиотека компонентов в матричном стиле с поддержкой тем</p>
+                    <div class="portfolio-item-tags"><span class="portfolio-item-tag">CSS</span><span class="portfolio-item-tag">UI Components</span><span class="portfolio-item-tag">Matrix</span></div>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="web">
+                <div class="portfolio-item-image"><span class="material-icons">language</span></div>
+                <div class="portfolio-item-content">
+                    <a href="https://ll1ness.zapto.org/" class="portfolio-item-link" target="_blank"><span class="material-icons" style="font-size:18px">open_in_new</span></a>
+                    <h3 class="portfolio-item-title">ЛИНЕСС</h3>
+                    <p class="portfolio-item-desc">Основной сайт сообщества с документацией и блогом</p>
+                    <div class="portfolio-item-tags"><span class="portfolio-item-tag">HTML</span><span class="portfolio-item-tag">CSS</span><span class="portfolio-item-tag">JavaScript</span></div>
+                </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+        <span class="section-label">О компании</span>
+        <h2 class="section-title">Создаём цифровые продукты для народа</h2>
+        <p class="about-desc">ЛИНЕСС — это разработчик, увлечённый созданием цифровых продуктов. Превращаю сложные идеи в народные решения.</p>
+        <div class="stats-grid">
+            <div class="stat-item to-card">
+                <div class="stat-number" data-target="5">0</div>
+                <div class="stat-label">Проектов</div>
+            </div>
+            <div class="stat-item to-card">
+                <div class="stat-number" data-target="50">0</div>
+                <div class="stat-label">Юзеров</div>
+            </div>
+            <div class="stat-item to-card">
+                <div class="stat-number" data-target="2">0</div>
+                <div class="stat-label">Года опыта</div>
+            </div>
+            <div class="stat-item to-card">
+                <div class="stat-number" data-target="25">0</div>
+                <div class="stat-label">Экспертов</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <span class="section-label">Свяжитесь с нами</span>
+                <h2 class="section-title">Давайте создадим что-то великое вместе</h2>
+                <p class="contact-desc">Расскажите о вашем проекте, и мы предложим оптимальное решение</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon"><span class="material-icons">email</span></div>
+                        <div class="contact-text">
+                            <span class="label">Email</span>
+                            <a href="mailto:kvantora@inbox.eu">kvantora@inbox.eu</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><span class="material-icons">phone</span></div>
+                        <div class="contact-text">
+                            <span class="label">Телефон</span>
+                            <a href="tel:+79513311091">+7 (951) 331-10-91</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/ll1ness" class="social-link" aria-label="GitHub" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://vk.com/ll1nsupp" class="social-link" aria-label="VK" target="_blank" rel="noopener">
+                        <img src="icons/vk.png" alt="VK" width="24" height="24">
+                    </a>
+                    <a href="https://gitflic.ru/user/ll1ness" class="social-link" aria-label="GitFlic" target="_blank" rel="noopener">
+                        <img src="icons/gitflic.svg" alt="GitFlic" width="24" height="24">
+                    </a>
+                </div>
+            </div>
+            <div class="chat-container" id="chatContainer">
+                <div class="chat-header">
+                    <div class="chat-avatar"><span class="material-icons">chat</span></div>
+                    <div class="chat-header-info">
+                        <h4>ЛИНЕСС Support</h4>
+                        <p>Проект ещё не открыт</p>
+                    </div>
+                    <div class="chat-status"></div>
+                </div>
+                <div class="chat-messages" id="chatMessages">
+                    <div class="chat-message bot">
+                        Проект ещё не открыт.<br>
+                        Чат будет доступен после открытия 9 апреля.
+                        <div class="chat-message-time">Сейчас</div>
+                    </div>
+                </div>
+                <div class="chat-input-area">
+                    <input type="text" class="chat-input" id="chatInput" placeholder="Чат временно недоступен" disabled>
+                    <button class="chat-send" id="chatSend" disabled>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (loaded from special/footer.html) -->
+    <div id="footer-container"></div>
+    <script>
+        fetch('special/footer.html')
+            .then(response => response.text())
+            .then(html => {
+                document.getElementById('footer-container').innerHTML = html;
+            })
+            .catch(err => console.error('Error loading footer:', err));
+    </script>
+
+    <!-- JavaScript -->
+    <script>
+        // Initialize theme
+        THEME.init();
+
+        // Mobile menu toggle
+        document.querySelector('.nav-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Stats counter animation
+        function animateCounters() {
+            document.querySelectorAll('.stat-number').forEach(counter => {
+                const target = parseInt(counter.dataset.target);
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+
+                const update = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(update);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                update();
+            });
+        }
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('stat-number')) {
+                        animateCounters();
+                    }
+                }
+            });
+        });
+
+        document.querySelectorAll('.stat-number').forEach(el => observer.observe(el));
+
+        // Portfolio filter
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const filter = this.dataset.filter;
+                document.querySelectorAll('.portfolio-item').forEach(item => {
+                    const isVisible = filter === 'all' || item.dataset.category === filter;
+                    item.classList.toggle('hidden', !isVisible);
+                });
+            });
+        });
+    </script>
+
+    <!-- EOF JavaScript Modules -->
+    <script src="eofjs3/EOFcursor3.js"></script>
+    <script src="eofjs3/EOFNavigation3.js"></script>
+    <script src="eofjs3/EOFScrollReveal3.js"></script>
+    <script src="eofjs3/EOFStatsCounter3.js"></script>
+    <script src="eofjs3/EOFPortfolioFilter3.js"></script>
+    <script src="eofjs3/EOFContactForm3.js"></script>
+    <script src="eofjs3/EOFNotification3.js"></script>
+    <script src="eofjs3/EOFParallax3.js"></script>
+    <script src="eofjs3/EOFMagnetic3.js"></script>
+    <script src="eofjs3/EOFTextSplit3.js"></script>
+    <script src="eofjs3/EOFLazyLoad3.js"></script>
+    <script src="eofjs3/EOFReducedMotion3.js"></script>
+    <script src="eofjs3/EOFPerformance3.js"></script>
+    <script src="eofjs3/EOFInit3.js"></script>
+    <script src="eofjs3/EOFServiceLoader3.js"></script>
+    <script src="eofjs3/EOFPortfolioFilterDynamic3.js"></script>
+    <script src="eofjs3/EOFChat3.js"></script>
+    <script src="eofjs3/EOFCanvasAnimation3.js"></script>
+    <script src="eofjs3/EOFGlobalBackground3.js"></script>
+    <script src="eofjs3/EOFMouseReactive3.js"></script>
+
+    <!-- AppWrite Integration -->
+    <script src="appwrite-config.js"></script>
+    <script src="appwrite-service.js"></script>
+    <script src="gateway.js"></script>
+</body>
+</html>

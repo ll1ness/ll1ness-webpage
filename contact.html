@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta name="description" content="Свяжитесь с ЛИНЕСС. Есть идея для проекта? Напишите мне!">
+<meta name="keywords" content="ЛИНЕСС, контакты, связь, email, GitHub, open source">
+<meta name="author" content="ЛИНЕСС">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ll1ness.zapto.org/contact.html">
+<meta property="og:title" content="Контакты - ЛИНЕСС">
+<meta property="og:description" content="Свяжитесь с ЛИНЕСС. Напишите о вашем проекте!">
+<meta property="og:image" content="https://ll1ness.zapto.org/logo.png">
+<link rel="canonical" href="https://ll1ness.zapto.org/contact.html">
+<title>Контакты - ЛИНЕСС</title>
+<script src="lib/techon-ui.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--font-main:'JetBrains Mono',monospace}*{box-sizing:border-box}body{font-family:var(--font-main);min-height:100vh;overflow-x:hidden;background:var(--to-bg);color:var(--to-text)}
+/* Custom Cursor */
+.cursor{position:fixed;width:12px;height:12px;background:var(--to-primary,#ffa502);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:transform 0.1s ease}
+.cursor-follower{position:fixed;width:40px;height:40px;border:1px solid var(--to-primary,#ffa502);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.15s ease;opacity:0.6}
+/* Background Grid Pattern */
+.bg-grid-pattern{position:fixed;top:0;left:0;right:0;bottom:0;background-image:linear-gradient(rgba(255,165,2,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,165,2,0.03) 1px,transparent 1px);background-size:50px 50px;pointer-events:none;z-index:-2}
+.ai-bg{position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:-1;background:var(--to-bg)}.ai-network{position:absolute;width:100%;height:100%;background-image:radial-gradient(circle at 30% 40%,rgba(255,255,255,0.08),transparent 30%),radial-gradient(circle at 70% 60%,rgba(255,255,255,0.08),transparent 35%);filter:blur(40px);animation:ai-pulse 10s ease-in-out infinite}
+@keyframes ai-pulse{0%,100%{opacity:0.5}50%{opacity:0.8}}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(3,3,3,0.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--to-border)}.nav-container{max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--to-text);font-weight:700;font-size:1.25rem}.nav-logo-img{width:32px;height:32px;border-radius:8px}.nav-menu{display:flex;align-items:center;gap:32px;list-style:none;margin:0;padding:0}.nav-link{color:var(--to-text-muted);text-decoration:none;font-size:14px;transition:color 0.3s;position:relative}.nav-link:hover{color:var(--to-text)}.nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--to-primary);transition:width 0.3s}.nav-link:hover::after{width:100%}.nav-toggle{display:none;flex-direction:column;gap:5px;background:0;border:0;cursor:pointer;padding:8px}.nav-toggle span{width:24px;height:2px;background:var(--to-text);transition:all 0.3s}
+.opening-badge{position:fixed;top:80px;right:20px;z-index:999;background:0;color:#ff4444;padding:8px 16px;border-radius:8px;font-size:14px;font-weight:600;border:2px solid rgba(255,68,68,0.7);animation:fadeIn 0.5s}@keyframes fadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:0}}.theme-toggle{background:0;border:1px solid var(--to-border);color:var(--to-text);width:40px;height:40px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s}.theme-toggle:hover{border-color:var(--to-primary)}
+.section{padding:100px 24px;max-width:1200px;margin:0 auto}.section-label{display:inline-block;font-size:12px;text-transform:uppercase;letter-spacing:2px;color:var(--to-primary);margin-bottom:12px}.section-title{font-size:2.5rem;font-weight:700;margin:0 0 24px}
+.contact-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}.contact-desc{font-size:1rem;color:var(--to-text-muted);margin:0 0 32px;line-height:1.6}.contact-details{display:flex;flex-direction:column;gap:24px;margin-bottom:32px}.contact-item{display:flex;align-items:center;gap:16px}.contact-icon{width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:var(--to-bg-tertiary);border:1px solid var(--to-border);border-radius:12px;color:var(--to-primary)}.contact-text{display:flex;flex-direction:column}.contact-text .label{font-size:12px;color:var(--to-text-muted);text-transform:uppercase;letter-spacing:1px}.contact-text a{color:var(--to-text);text-decoration:none;font-weight:500;transition:color 0.3s}.contact-text a:hover{color:var(--to-primary)}.social-links{display:flex;gap:16px}.social-link{width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:var(--to-bg-tertiary);border:1px solid var(--to-border);border-radius:12px;color:var(--to-text-muted);transition:all 0.3s}.social-link:hover{border-color:var(--to-primary);color:var(--to-primary);transform:translateY(-4px)}.social-link svg{width:24px;height:24px}.social-link img{width:24px;height:24px}
+.chat-container{background:var(--to-bg-card);border:1px solid var(--to-border);border-radius:16px;overflow:hidden}.chat-header{display:flex;align-items:center;gap:12px;padding:20px;background:var(--to-bg-tertiary);border-bottom:1px solid var(--to-border)}.chat-avatar{width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:var(--to-primary);border-radius:50%;color:var(--to-bg)}.chat-header-info h4{margin:0;font-size:14px;font-weight:600}.chat-header-info p{margin:4px 0 0;font-size:12px;color:var(--to-text-muted)}.chat-status{width:8px;height:8px;background:var(--to-warning);border-radius:50%;margin-left:auto;animation:pulse 2s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}.chat-messages{padding:20px;min-height:300px;max-height:400px;overflow-y:auto}.chat-message{padding:16px;background:var(--to-bg-tertiary);border-radius:12px;margin-bottom:12px;font-size:14px;line-height:1.5}.chat-message.bot{border-left:3px solid var(--to-primary)}.chat-message-time{font-size:11px;color:var(--to-text-muted);margin-top:8px}.chat-input-area{display:flex;gap:12px;padding:20px;background:var(--to-bg-tertiary);border-top:1px solid var(--to-border)}.chat-input{flex:1;background:var(--to-bg-card);border:1px solid var(--to-border);border-radius:8px;padding:12px 16px;color:var(--to-text);font-family:inherit;font-size:14px}.chat-input::placeholder{color:var(--to-text-muted)}.chat-input:focus{outline:0;border-color:var(--to-primary)}.chat-send{width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:var(--to-primary);border:0;border-radius:8px;cursor:pointer;transition:all 0.3s}.chat-send svg{width:20px;height:20px;stroke:var(--to-bg)}.chat-send:hover{transform:scale(1.05)}
+/* Footer with blueprint */
+.footer{background:var(--to-bg-secondary);border-top:1px solid var(--to-border);padding:60px 24px 24px;position:relative;overflow:hidden}.footer-blueprint-left,.footer-blueprint-right{position:absolute;width:200px;height:200px;opacity:1;pointer-events:none;z-index:0}.footer-blueprint-left{left:20px;bottom:20px;border:2px solid var(--to-primary,#ffa502)}.footer-blueprint-right{right:20px;bottom:20px;border:2px solid var(--to-primary,#ffa502)}.footer-content{position:relative;z-index:1;max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-bottom:40px;border-bottom:1px solid var(--to-border)}.footer-bottom{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding-top:40px}.footer-logo{font-size:1.5rem;font-weight:700;color:var(--to-text);text-decoration:none}.footer-brand p{margin:8px 0 0;font-size:14px;color:var(--to-text-muted)}.footer-links{display:flex;gap:24px;flex-wrap:wrap}.footer-links a{color:var(--to-text-muted);text-decoration:none;font-size:14px;transition:color 0.3s}.footer-links a:hover{color:var(--to-primary)}.footer-bottom{max-width:1200px;margin:0 auto;padding-top:40px}.footer-extended{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-bottom:40px}.footer-section h4{font-size:14px;font-weight:600;margin:0 0 16px;text-transform:uppercase;letter-spacing:1px}.footer-section ul{list-style:none;padding:0;margin:0}.footer-section li{margin-bottom:8px}.footer-section a{color:var(--to-text-muted);text-decoration:none;font-size:14px;transition:color 0.3s}.footer-section a:hover{color:var(--to-primary)}.footer-legal{padding-top:24px;border-top:1px solid var(--to-border);display:flex;flex-direction:row;justify-content:space-between;gap:16px}.footer-legal p{margin:0;font-size:14px;color:var(--to-text-muted)}.footer-legal-links{display:flex;gap:24px}.footer-legal-links a{color:var(--to-text-muted);text-decoration:none;font-size:14px;transition:color 0.3s}.footer-legal-links a:hover{color:var(--to-primary)}
+@media(max-width:1024px){.contact-wrapper{grid-template-columns:1fr}.footer-extended{grid-template-columns:repeat(2,1fr)}}@media(max-width:768px){.nav-menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--to-bg-card);flex-direction:column;padding:24px;gap:16px;border-bottom:1px solid var(--to-border)}.nav-menu.active{display:flex}.nav-toggle{display:flex}.section-title{font-size:2rem}.footer-content{flex-direction:column;gap:24px;text-align:center}.footer-links{justify-content:center}.footer-extended{grid-template-columns:1fr;text-align:center}}
+</style>
+</head>
+<body>
+<!-- Custom Cursor -->
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+
+<!-- Background Grid Pattern -->
+<div class="bg-grid-pattern"></div>
+
+<!-- AI Background -->
+<div class="ai-bg"><div class="ai-network"></div></div>
+
+<!-- File Protocol Redirect -->
+<script>if(window.location.protocol==='file:'){window.location.href='https://ll1ness.zapto.org/'}</script>
+<div class="opening-badge">🎉 Открытие 9 апреля</div>
+<nav class="nav"><div class="nav-container"><a href="index.html" class="nav-logo"><img src="logo.png" alt="ЛИНЕСС" class="nav-logo-img" onerror="this.style.display='none'"><span>ЛИНЕСС</span></a><ul class="nav-menu"><li><a href="index.html" class="nav-link">Главная</a></li><li><a href="about.html" class="nav-link">О проекте</a></li><li><a href="portfolio.html" class="nav-link">Проекты</a></li><li><a href="blog.html" class="nav-link">Блог</a></li><li><a href="https://github.com/ll1ness" class="nav-link" target="_blank">GitHub</a></li><li><a href="contact.html" class="nav-link">Связаться</a></li><li><button class="theme-toggle" onclick="THEME.toggle()" title="Сменить тему"><span class="material-icons" style="font-size:20px">brightness_6</span></button></li></ul><button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button></div></nav>
+<section class="section" style="padding-top:140px"><span class="section-label">Связаться</span><h1 class="section-title">Свяжитесь со мной</h1><p class="contact-desc">Есть идея для проекта? Напишите мне!</p><div class="contact-details"><div class="contact-item"><div class="contact-icon"><span class="material-icons">email</span></div><div class="contact-text"><span class="label">Email</span><a href="mailto:kvantora@inbox.eu">kvantora@inbox.eu</a></div></div><div class="contact-item"><div class="contact-icon"><span class="material-icons">code</span></div><div class="contact-text"><span class="label">GitHub</span><a href="https://github.com/ll1ness" target="_blank">github.com/ll1ness</a></div></div></div><div class="social-links"><a href="https://github.com/ll1ness" class="social-link" aria-label="GitHub" target="_blank"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a><a href="https://vk.com/ll1nsupp" class="social-link" aria-label="VK" target="_blank"><img src="icons/vk.png" alt="VK" width="24" height="24"></a><a href="https://gitflic.ru/user/ll1ness" class="social-link" aria-label="GitFlic" target="_blank"><img src="icons/gitflic.svg" alt="GitFlic" width="24" height="24"></a></div></div><div class="chat-container" id="chatContainer"><div class="chat-header"><div class="chat-avatar"><span class="material-icons">chat</span></div><div class="chat-header-info"><h4>ЛИНЕСС Support</h4><p>Проект ещё не открыт</p></div><div class="chat-status"></div></div><div class="chat-messages" id="chatMessages"><div class="chat-message bot">Проект ещё не открыт.<br>Чат будет доступен после открытия 9 апреля.<div class="chat-message-time">Сейчас</div></div></div><div class="chat-input-area"><input type="text" class="chat-input" id="chatInput" placeholder="Чат временно недоступен" disabled><button class="chat-send" id="chatSend" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button></div></div></section>
+<div id="footer-container"></div>
+<script>fetch('special/footer.html').then(r=>r.text()).then(html=>{document.getElementById('footer-container').innerHTML=html}).catch(e=>console.error('Error loading footer:',e))</script>
+<script>THEME.init();document.querySelector('.nav-toggle').addEventListener('click',function(){document.querySelector('.nav-menu').classList.toggle('active')})</script>
+<script src="eofjs3/EOFcursor3.js"></script>
+<script src="eofjs3/EOFNavigation3.js"></script>
+<script src="eofjs3/EOFScrollReveal3.js"></script>
+<script src="eofjs3/EOFStatsCounter3.js"></script>
+<script src="eofjs3/EOFPortfolioFilter3.js"></script>
+<script src="eofjs3/EOFContactForm3.js"></script>
+<script src="eofjs3/EOFNotification3.js"></script>
+<script src="eofjs3/EOFParallax3.js"></script>
+<script src="eofjs3/EOFMagnetic3.js"></script>
+<script src="eofjs3/EOFTextSplit3.js"></script>
+<script src="eofjs3/EOFLazyLoad3.js"></script>
+<script src="eofjs3/EOFReducedMotion3.js"></script>
+<script src="eofjs3/EOFPerformance3.js"></script>
+<script src="eofjs3/EOFInit3.js"></script>
+<script src="eofjs3/EOFServiceLoader3.js"></script>
+<script src="eofjs3/EOFPortfolioLoader3.js"></script>
+<script src="eofjs3/EOFPortfolioFilterDynamic3.js"></script>
+<script src="eofjs3/EOFChat3.js"></script>
+<script src="eofjs3/EOFCanvasAnimation3.js"></script>
+<script src="eofjs3/EOFGlobalBackground3.js"></script>
+<script src="eofjs3/EOFMouseReactive3.js"></script>
+<script src="appwrite-config.js"></script>
+<script src="appwrite-service.js"></script>
+<script src="gateway.js"></script>
+</body>
+</html>

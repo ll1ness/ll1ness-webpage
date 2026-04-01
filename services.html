@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta name="description" content="Услуги и инструменты ЛИНЕСС. Open source проекты для разработчиков.">
+<meta name="keywords" content="ЛИНЕСС, услуги, разработка, веб, open source">
+<meta name="author" content="ЛИНЕСС">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ll1ness.zapto.org/services.html">
+<meta property="og:title" content="Услуги - ЛИНЕСС">
+<meta property="og:description" content="Открытые инструменты и библиотеки.">
+<meta property="og:image" content="https://ll1ness.zapto.org/logo.png">
+<link rel="canonical" href="https://ll1ness.zapto.org/services.html">
+<title>Услуги - ЛИНЕСС</title>
+<script src="lib/techon-ui.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--font-main:'JetBrains Mono',monospace}*{box-sizing:border-box}body{font-family:var(--font-main);min-height:100vh;overflow-x:hidden;background:var(--to-bg);color:var(--to-text)}
+/* Custom Cursor */
+.cursor{position:fixed;width:12px;height:12px;background:var(--to-primary,#ffa502);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:transform 0.1s ease}
+.cursor-follower{position:fixed;width:40px;height:40px;border:1px solid var(--to-primary,#ffa502);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform 0.15s ease;opacity:0.6}
+/* Background Grid Pattern */
+.bg-grid-pattern{position:fixed;top:0;left:0;right:0;bottom:0;background-image:linear-gradient(rgba(255,165,2,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,165,2,0.03) 1px,transparent 1px);background-size:50px 50px;pointer-events:none;z-index:-2}
+.ai-bg{position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:-1;background:var(--to-bg)}.ai-network{position:absolute;width:100%;height:100%;background-image:radial-gradient(circle at 30% 40%,rgba(255,255,255,0.08),transparent 30%),radial-gradient(circle at 70% 60%,rgba(255,255,255,0.08),transparent 35%);filter:blur(40px);animation:ai-pulse 10s ease-in-out infinite}
+@keyframes ai-pulse{0%,100%{opacity:0.5}50%{opacity:0.8}}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(3,3,3,0.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--to-border)}.nav-container{max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between}.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--to-text);font-weight:700;font-size:1.25rem}.nav-logo-img{width:32px;height:32px;border-radius:8px}.nav-menu{display:flex;align-items:center;gap:32px;list-style:none;margin:0;padding:0}.nav-link{color:var(--to-text-muted);text-decoration:none;font-size:14px;transition:color 0.3s;position:relative}.nav-link:hover{color:var(--to-text)}.nav-link::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--to-primary);transition:width 0.3s}.nav-link:hover::after{width:100%}.nav-toggle{display:none;flex-direction:column;gap:5px;background:0;border:0;cursor:pointer;padding:8px}.nav-toggle span{width:24px;height:2px;background:var(--to-text);transition:all 0.3s}
+.opening-badge{position:fixed;top:80px;right:20px;z-index:999;background:0;color:#ff4444;padding:8px 16px;border-radius:8px;font-size:14px;font-weight:600;border:2px solid rgba(255,68,68,0.7);animation:fadeIn 0.5s}@keyframes fadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:0}}.theme-toggle{background:0;border:1px solid var(--to-border);color:var(--to-text);width:40px;height:40px;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.3s}.theme-toggle:hover{border-color:var(--to-primary)}
+.section{padding:100px 24px;max-width:1200px;margin:0 auto}.section-label{display:inline-block;font-size:12px;text-transform:uppercase;letter-spacing:2px;color:var(--to-primary);margin-bottom:12px}.section-title{font-size:2.5rem;font-weight:700;margin:0 0 24px;text-align:center}.section-desc{font-size:1.125rem;color:var(--to-text-muted);margin:0 auto 40px;max-width:600px;text-align:center;line-height:1.8}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;margin-top:40px}.service-card{background:var(--to-bg-card);border:1px solid var(--to-border);border-radius:12px;padding:32px;transition:all 0.3s}.service-card:hover{transform:translateY(-8px);border-color:var(--to-primary);box-shadow:0 16px 48px rgba(255,165,2,0.2)}.service-icon{width:56px;height:56px;display:flex;align-items:center;justify-content:center;background:var(--to-bg-tertiary);border-radius:12px;color:var(--to-primary);margin-bottom:20px}.service-title{font-size:1.25rem;font-weight:600;margin:0 0 12px}.service-desc{font-size:14px;color:var(--to-text-muted);line-height:1.6;margin:0}
+/* Footer with blueprint */
+.footer{background:var(--to-bg-secondary);border-top:1px solid var(--to-border);padding:60px 24px 24px;position:relative;overflow:hidden}.footer-blueprint-left,.footer-blueprint-right{position:absolute;width:200px;height:200px;opacity:1;pointer-events:none;z-index:0}.footer-blueprint-left{left:20px;bottom:20px;border:2px solid var(--to-primary,#ffa502)}.footer-blueprint-right{right:20px;bottom:20px;border:2px solid var(--to-primary,#ffa502)}.footer-content{position:relative;z-index:1;max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-bottom:40px;border-bottom:1px solid var(--to-border)}.footer-bottom{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding-top:40px}.footer-logo{font-size:1.5rem;font-weight:700;color:var(--to-text);text-decoration:none}.footer-brand p{margin:8px 0 0;font-size:14px;color:var(--to-text-muted)}.footer-links{display:flex;gap:24px;flex-wrap:wrap}.footer-links a{color:var(--to-text-muted);text-decoration:none;font-size:14px;transition:color 0.3s}.footer-links a:hover{color:var(--to-primary)}.footer-bottom{max-width:1200px;margin:0 auto;padding-top:40px}.footer-extended{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-bottom:40px}.footer-section h4{font-size:14px;font-weight:600;margin:0 0 16px;text-transform:uppercase;letter-spacing:1px}.footer-section ul{list-style:none;padding:0;margin:0}.footer-section li{margin-bottom:8px}.footer-section a{color:var(--to-text-muted);text-decoration:none;font-size:14px;transition:color 0.3s}.footer-section a:hover{color:var(--to-primary)}.footer-legal{padding-top:24px;border-top:1px solid var(--to-border);display:flex;flex-direction:row;justify-content:space-between;gap:16px}.footer-legal p{margin:0;font-size:14px;color:var(--to-text-muted)}.footer-legal-links{display:flex;gap:24px}.footer-legal-links a{color:var(--to-text-muted);text-decoration:none;font-size:14px;transition:color 0.3s}.footer-legal-links a:hover{color:var(--to-primary)}
+@media(max-width:1024px){.footer-extended{grid-template-columns:repeat(2,1fr)}}@media(max-width:768px){.nav-menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--to-bg-card);flex-direction:column;padding:24px;gap:16px;border-bottom:1px solid var(--to-border)}.nav-menu.active{display:flex}.nav-toggle{display:flex}.section-title{font-size:2rem}.footer-content{flex-direction:column;gap:24px;text-align:center}.footer-links{justify-content:center}.footer-extended{grid-template-columns:1fr;text-align:center}}
+</style>
+</head>
+<body>
+<!-- Custom Cursor -->
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
+
+<!-- Background Grid Pattern -->
+<div class="bg-grid-pattern"></div>
+
+<!-- AI Background -->
+<div class="ai-bg"><div class="ai-network"></div></div>
+
+<!-- File Protocol Redirect -->
+<script>if(window.location.protocol==='file:'){window.location.href='https://ll1ness.zapto.org/'}</script>
+<div class="opening-badge">🎉 Открытие 9 апреля</div>
+<nav class="nav"><div class="nav-container"><a href="index.html" class="nav-logo"><img src="logo.png" alt="ЛИНЕСС" class="nav-logo-img" onerror="this.style.display='none'"><span>ЛИНЕСС</span></a><ul class="nav-menu"><li><a href="index.html" class="nav-link">Главная</a></li><li><a href="about.html" class="nav-link">О проекте</a></li><li><a href="portfolio.html" class="nav-link">Проекты</a></li><li><a href="blog.html" class="nav-link">Блог</a></li><li><a href="https://github.com/ll1ness" class="nav-link" target="_blank">GitHub</a></li><li><a href="contact.html" class="nav-link">Связаться</a></li><li><button class="theme-toggle" onclick="THEME.toggle()" title="Сменить тему"><span class="material-icons" style="font-size:20px">brightness_6</span></button></li></ul><button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button></div></nav>
+<section class="section" style="padding-top:140px"><span class="section-label">Проекты</span><h1 class="section-title">Открытые инструменты</h1><p class="section-desc">Создаю и поддерживаю open source проекты, которые помогают разработчикам</p><div class="services-grid" id="servicesGrid"></div></section>
+<section class="section" style="padding-top:40px"><h2 class="section-title">Наши технологии</h2><p class="section-desc">Мы используем современный стек открытых технологий, чтобы наши проекты были доступны, безопасны и масштабируемы для каждого.</p></section>
+<div id="footer-container"></div>
+<script>fetch('special/footer.html').then(r=>r.text()).then(html=>{document.getElementById('footer-container').innerHTML=html}).catch(e=>console.error('Error loading footer:',e))</script>
+<script>THEME.init();document.querySelector('.nav-toggle').addEventListener('click',function(){document.querySelector('.nav-menu').classList.toggle('active')})</script>
+<script src="eofjs3/EOFcursor3.js"></script>
+<script src="eofjs3/EOFNavigation3.js"></script>
+<script src="eofjs3/EOFScrollReveal3.js"></script>
+<script src="eofjs3/EOFStatsCounter3.js"></script>
+<script src="eofjs3/EOFPortfolioFilter3.js"></script>
+<script src="eofjs3/EOFContactForm3.js"></script>
+<script src="eofjs3/EOFNotification3.js"></script>
+<script src="eofjs3/EOFParallax3.js"></script>
+<script src="eofjs3/EOFMagnetic3.js"></script>
+<script src="eofjs3/EOFTextSplit3.js"></script>
+<script src="eofjs3/EOFLazyLoad3.js"></script>
+<script src="eofjs3/EOFReducedMotion3.js"></script>
+<script src="eofjs3/EOFPerformance3.js"></script>
+<script src="eofjs3/EOFInit3.js"></script>
+<script src="eofjs3/EOFServiceLoader3.js"></script>
+<script src="eofjs3/EOFPortfolioLoader3.js"></script>
+<script src="eofjs3/EOFPortfolioFilterDynamic3.js"></script>
+<script src="eofjs3/EOFChat3.js"></script>
+<script src="eofjs3/EOFCanvasAnimation3.js"></script>
+<script src="eofjs3/EOFGlobalBackground3.js"></script>
+<script src="eofjs3/EOFMouseReactive3.js"></script>
+<script src="gateway.js"></script>
+</body>
+</html>
